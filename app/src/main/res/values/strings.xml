@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PME</string>
+    <string name="create_personal_account">Create personal account</string>
+    <string name="your_name">Your Name</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="create_account">Create Account</string>
 </resources>

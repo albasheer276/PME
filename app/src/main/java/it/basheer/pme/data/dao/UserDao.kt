@@ -1,13 +1,13 @@
-package it.basheer.pme.dao
+package it.basheer.pme.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import it.basheer.pme.model.User
+import it.basheer.pme.data.model.User
 
 @Dao
 interface UserDao {
 
     @Insert
-    suspend fun test(user: User)
+    suspend fun createUser(user: User)
 }

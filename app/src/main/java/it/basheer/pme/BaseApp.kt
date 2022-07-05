@@ -1,7 +1,7 @@
-package it.basheer.pme.base
+package it.basheer.pme
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class MyApplication : Application()
+class BaseApp : Application()

@@ -2,13 +2,13 @@ package it.basheer.pme.da
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import it.basheer.pme.dao.UserDao
-import it.basheer.pme.repo.UserRepo
+import it.basheer.pme.data.AppDatabase
+import it.basheer.pme.data.dao.UserDao
+import it.basheer.pme.data.repo.UserRepo
 import it.basheer.pme.util.DATABASE_NAME
 import javax.inject.Singleton
 
@@ -28,17 +28,4 @@ object DataModule {
         ).fallbackToDestructiveMigration()
             .build()
     }
-
-    @Provides
-    @Singleton
-    fun provideUserDao(appDatabase: AppDatabase): UserDao {
-        return appDatabase.userDao()
-    }
-
-    @Provides
-    @Singleton
-    fun provideUserRepo(userDao: UserDao): UserRepo {
-        return UserRepo(userDao)
-    }
-
 }
