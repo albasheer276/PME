@@ -82,13 +82,14 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:progressTint="@color/md_amber400"
+            android:indeterminateTint="@color/md_amber400"
             app:layout_constraintBottom_toBottomOf="@id/submit"
             app:layout_constraintLeft_toLeftOf="@id/submit"
             app:layout_constraintRight_toRightOf="@id/submit"
-            app:layout_constraintTop_toTopOf="@id/submit" />
+            app:layout_constraintTop_toTopOf="@+id/submit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
