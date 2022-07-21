@@ -7,8 +7,8 @@ import javax.inject.Inject
 class UserRepo @Inject constructor(appDatabase: AppDatabase) {
     private val userDao = appDatabase.userDao
 
-    suspend fun createUser(user: User){
-        userDao.createUser(user)
+    suspend fun createUser(user: User): Long{
+        return userDao.createUser(user)
     }
 
 }

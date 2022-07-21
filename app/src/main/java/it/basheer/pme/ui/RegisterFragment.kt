@@ -16,12 +16,12 @@ import androidx.transition.TransitionManager
 import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
 import it.basheer.pme.databinding.FragmentRegisterBinding
-import it.basheer.pme.util.hideKeyboard
+import it.basheer.pme.ui.view_models.UserViewModel
 
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
-    private val viewModel: RegisterViewModel by viewModels()
+    private val viewModel: UserViewModel by viewModels()
 
     private lateinit var mBinding: FragmentRegisterBinding
 
@@ -39,7 +39,7 @@ class RegisterFragment : Fragment() {
         mBinding.submit.setOnClickListener {
             mBinding.progressBar.visibility = View.VISIBLE
             mBinding.submit.isEnabled = false
-            mBinding.submit.backgroundTintList = ColorStateList.valueOf(getColor(resources, R.color.md_bluegrey700, requireActivity().theme))
+            mBinding.submit.backgroundTintList = ColorStateList.valueOf(getColor(resources, R.color.md_theme_light_tertiary, requireActivity().theme))
 
         }
 

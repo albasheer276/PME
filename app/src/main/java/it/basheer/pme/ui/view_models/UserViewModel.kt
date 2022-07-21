@@ -1,6 +1,8 @@
-package it.basheer.pme.ui
+package it.basheer.pme.ui.view_models
 
 import android.app.Application
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import it.basheer.pme.base.BaseViewModel
@@ -10,13 +12,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RegisterViewModel @Inject constructor(
+class UserViewModel @Inject constructor(
     application: Application, private val userRepo: UserRepo
 ) : BaseViewModel(application) {
 
-    fun createUser(user: User) {
-        viewModelScope.launch {
-            userRepo.createUser(user)
-        }
+    fun createUser(user: User) = liveData {
+        emit(userRepo.createUser(user))
     }
 }

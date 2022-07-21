@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">PME</string>
     <string name="create_personal_account">انشاء الحساب الشخصي</string>
+    <string name="pme">PME</string>
 </resources>

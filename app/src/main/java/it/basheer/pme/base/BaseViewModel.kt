@@ -10,5 +10,4 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel(application: Application) : AndroidViewModel(application) {
 
-
 }

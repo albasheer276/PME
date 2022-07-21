@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.first_use.CreateProfileFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/createProfile_guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <ImageView
+        android:id="@+id/createProfile_imgIcon"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:orientation="vertical"
+        android:src="@drawable/ic_main_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/createProfile_guide1" />
+
+    <TextView
+        android:id="@+id/createProfile_lblTitle"
+        style="@style/DisplayMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/pme"
+        app:layout_constraintEnd_toEndOf="@+id/createProfile_imgIcon"
+        app:layout_constraintStart_toStartOf="@+id/createProfile_imgIcon"
+        app:layout_constraintTop_toBottomOf="@+id/createProfile_imgIcon" />
+
+    <TextView
+        android:id="@+id/createProfile_lblSubTitle"
+        style="@style/TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/subTitle"
+        app:layout_constraintEnd_toEndOf="@+id/createProfile_imgIcon"
+        app:layout_constraintStart_toStartOf="@+id/createProfile_imgIcon"
+        app:layout_constraintTop_toBottomOf="@+id/createProfile_lblTitle" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/createProfile_txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createProfile_lblSubTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_your_name"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName|textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/createProfile_btnCreate"
+        style="@style/PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/create_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createProfile_txtName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

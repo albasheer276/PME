@@ -9,5 +9,5 @@ import it.basheer.pme.data.model.User
 interface UserDao {
 
     @Insert
-    suspend fun createUser(user: User)
+    suspend fun createUser(user: User): Long
 }

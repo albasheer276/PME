@@ -2,6 +2,15 @@
     <string name="app_name">PME</string>
     <string name="create_personal_account">Create personal account</string>
     <string name="your_name">Your Name</string>
-    <string name="pin_code">Pin Code</string>
+    <string name="pin_code">PIN Code</string>
     <string name="create_account">Create Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pme">PME</string>
+    <string name="subTitle">Hi there\nit’s the time to manage your life</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="create_profile">Create Profile</string>
+    <string name="warning_write_your_name">Please, Write your name!</string>
+    <string name="pin_used_the_app">This PIN used every time you using the app</string>
+    <string name="set_pin">Set PIN</string>
 </resources>

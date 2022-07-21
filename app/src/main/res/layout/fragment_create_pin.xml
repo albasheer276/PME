@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.first_use.CreatePinFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/createPin_guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <ImageView
+        android:id="@+id/createPin_imgIcon"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:orientation="vertical"
+        android:src="@drawable/ic_main_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/createPin_guide1" />
+
+    <TextView
+        android:id="@+id/createPin_lblTitle"
+        style="@style/DisplayMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/pme"
+        app:layout_constraintEnd_toEndOf="@+id/createPin_imgIcon"
+        app:layout_constraintStart_toStartOf="@+id/createPin_imgIcon"
+        app:layout_constraintTop_toBottomOf="@+id/createPin_imgIcon" />
+
+    <TextView
+        android:id="@+id/createPin_lblSubTitle"
+        style="@style/TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/pin_code"
+        app:layout_constraintEnd_toEndOf="@+id/createPin_imgIcon"
+        app:layout_constraintStart_toStartOf="@+id/createPin_imgIcon"
+        app:layout_constraintTop_toBottomOf="@+id/createPin_lblTitle" />
+
+    <com.mukesh.OtpView
+        android:id="@+id/createPin_otp_view"
+        style="@style/PinStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:inputType="number"
+        app:OtpItemCount="4"
+        app:OtpItemHeight="64dp"
+        app:OtpItemRadius="8dp"
+        app:OtpItemSpacing="16dp"
+        app:OtpItemWidth="48dp"
+        app:OtpViewType="rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createPin_lblSubTitle" />
+
+    <!--<androidx.compose.ui.platform.ComposeView
+        android:id="@+id/createPin_otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createPin_lblSubTitle"  />-->
+
+    <!--<in.aabhasjindal.otptextview.OtpTextView
+        android:id="@+id/createPin_otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:height="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createPin_lblSubTitle"
+        app:length="4"
+        app:otp="1234"
+        app:otp_text_size="24dp"
+        app:width="48dp" />-->
+
+    <TextView
+        android:id="@+id/createPin_lblDescription"
+        style="@style/LabelLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/pin_used_the_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createPin_otp_view" />
+
+    <Button
+        android:id="@+id/createPin_btnSetPin"
+        style="@style/PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/set_pin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createPin_lblDescription" />
+
+    <Button
+        android:id="@+id/createPin_btnSetPin2"
+        style="@style/SecondaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Skip for now"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createPin_lblDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

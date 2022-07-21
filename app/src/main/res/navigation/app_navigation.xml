@@ -3,10 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/registerFragment">
+    app:startDestination="@id/splashFragment">
     <fragment
-        android:id="@+id/registerFragment"
-        android:name="it.basheer.pme.ui.RegisterFragment"
-        android:label="@string/create_personal_account"
-        tools:layout="@layout/fragment_register" />
+        android:id="@+id/splashFragment"
+        android:name="it.basheer.pme.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_createProfileFragment"
+            app:destination="@id/createProfileFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProfileFragment"
+        android:name="it.basheer.pme.ui.first_use.CreateProfileFragment"
+        android:label="fragment_create_profile"
+        tools:layout="@layout/fragment_create_profile" >
+        <action
+            android:id="@+id/action_createProfileFragment_to_createPinFragment"
+            app:destination="@id/createPinFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPinFragment"
+        android:name="it.basheer.pme.ui.first_use.CreatePinFragment"
+        android:label="fragment_create_pin"
+        tools:layout="@layout/fragment_create_pin" />
 </navigation>
