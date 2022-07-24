@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.first_use.PositiveTasksFragment">
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/firstPositive_rvTasks"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstPositive_lblSubTitle"
+        app:layout_empty="@layout/empty_layout"
+        app:layout_progress="@layout/loading_layout"
+        app:scrollbars="none" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/firstPositive_btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_baseline_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/add_task" />
+
+    <ImageView
+        android:id="@+id/firstPositive_imgMain"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_main_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/pme" />
+
+    <TextView
+        android:id="@+id/firstPositive_lblTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/pme"
+        style="@style/HeadlineMedium"
+        app:layout_constraintBottom_toBottomOf="@+id/firstPositive_imgMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/firstPositive_imgMain" />
+
+    <TextView
+        android:id="@+id/firstPositive_lblSubTitle"
+        style="@style/TitleMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/the_tasks_you_want_to_commit_to"
+        app:layout_constraintEnd_toEndOf="@+id/firstPositive_imgMain"
+        app:layout_constraintStart_toStartOf="@+id/firstPositive_lblTitle"
+        app:layout_constraintTop_toBottomOf="@+id/firstPositive_imgMain" />
+</androidx.constraintlayout.widget.ConstraintLayout>

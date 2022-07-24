@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
@@ -28,6 +29,13 @@
         <item name="elevationOverlayColor">@color/md_theme_light_surfaceTint</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
         <item name="fontFamily">@font/reem_kufi_font</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+    </style>
+
+    <style name="OtpWidget.OtpView" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:maxLines">1</item>
     </style>
 
 
@@ -35,18 +43,47 @@
         <item name="android:textColor">@color/md_theme_light_inverseSurface</item>
         <item name="android:textAlignment">center</item>
     </style>
+
+    <style name="HeadlineMedium" parent="@style/TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/md_theme_light_inverseSurface</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="HeadlineSmall" parent="@style/TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/md_theme_light_onSurface</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TitleLarge" parent="@style/TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/md_theme_light_secondary</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
     <style name="TitleMedium" parent="@style/TextAppearance.Material3.TitleMedium">
         <item name="android:textColor">@color/md_theme_light_secondary</item>
         <item name="android:textAlignment">center</item>
     </style>
-    <style name="LabelLarge" parent="@style/TextAppearance.Material3.LabelMedium">
+
+    <style name="LabelMedium" parent="@style/TextAppearance.Material3.LabelMedium">
         <item name="android:textColor">@color/md_theme_light_secondary</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="LabelSmall" parent="@style/TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@color/md_theme_light_secondary</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="BodyMedium" parent="@style/TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/md_theme_light_onSurfaceVariant</item>
         <item name="android:textAlignment">center</item>
     </style>
 
     <style name="PinStyle" parent="@style/TextAppearance.Material3.HeadlineMedium">
         <item name="android:textColor">@color/md_theme_light_onBackground</item>
         <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="PositiveTasksDialog">
+        <item name="android:background">@drawable/dialog_rounded_light_bg</item>
     </style>
 
     <style name="BaseButton" parent="ThemeOverlay.Material3.Button">

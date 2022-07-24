@@ -13,4 +13,17 @@
     <string name="warning_write_your_name">Please, Write your name!</string>
     <string name="pin_used_the_app">This PIN used every time you using the app</string>
     <string name="set_pin">Set PIN</string>
+    <string name="skip_for_now">Skip for now</string>
+    <string name="pin_4_digits">PIN should be 4 numbers</string>
+    <string name="add_task">Add Task</string>
+    <string name="loading_data">Loading Data…</string>
+    <string name="empty_data">Empty Data</string>
+    <string name="let_s_create_the_tasks_you_want_to_commit_to">Let\'s create the tasks you want to commit to</string>
+    <string name="the_tasks_you_want_to_commit_to">The tasks you want to commit to</string>
+    <string name="create_new_task">Create new task</string>
+    <string name="task_name">Task Name</string>
+    <string name="task_period">Task Period</string>
+    <string name="task_count">Task Count</string>
+    <string name="task_duration_min">Task Duration (min)</string>
+    <string name="task_points">Task Points</string>
 </resources>

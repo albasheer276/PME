@@ -34,6 +34,8 @@ class CreateProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        mBinding.createProfileTxtName.requestFocus()
+
         mBinding.createProfileBtnCreate.setOnClickListener {
             createProfile()
         }
@@ -56,7 +58,8 @@ class CreateProfileFragment : Fragment() {
             return
         }
         val user = User(
-            name = name.toString()
+            name = name.toString(),
+            is_child = false
         )
         userViewModel.createUser(user).observe(viewLifecycleOwner) { id ->
             BaseApp.getInstance().user = user.copy(id = id)

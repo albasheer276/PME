@@ -1,9 +1,12 @@
-package it.basheer.pme.main_activity
+package it.basheer.pme.ui.main_activity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
+import it.basheer.pme.base.BaseApp
 import it.basheer.pme.databinding.ActivityMainBinding
+import it.basheer.pme.ui.view_models.UserViewModel
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

@@ -42,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:labelFor="@id/createPin_otp_view"
         android:text="@string/pin_code"
         app:layout_constraintEnd_toEndOf="@+id/createPin_imgIcon"
         app:layout_constraintStart_toStartOf="@+id/createPin_imgIcon"
@@ -53,6 +54,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:cursorVisible="true"
+        android:focusable="true"
         android:inputType="number"
         app:OtpItemCount="4"
         app:OtpItemHeight="64dp"
@@ -60,34 +63,15 @@
         app:OtpItemSpacing="16dp"
         app:OtpItemWidth="48dp"
         app:OtpViewType="rectangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPin_lblSubTitle" />
-
-    <!--<androidx.compose.ui.platform.ComposeView
-        android:id="@+id/createPin_otp_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPin_lblSubTitle"  />-->
-
-    <!--<in.aabhasjindal.otptextview.OtpTextView
-        android:id="@+id/createPin_otp_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:height="64dp"
+        app:OtpLineColor="@color/md_theme_light_onBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createPin_lblSubTitle"
-        app:length="4"
-        app:otp="1234"
-        app:otp_text_size="24dp"
-        app:width="48dp" />-->
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/createPin_lblDescription"
-        style="@style/LabelLarge"
+        style="@style/LabelMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -108,13 +92,13 @@
         app:layout_constraintTop_toBottomOf="@+id/createPin_lblDescription" />
 
     <Button
-        android:id="@+id/createPin_btnSetPin2"
+        android:id="@+id/createPin_btnSkipPin"
         style="@style/SecondaryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="Skip for now"
+        android:text="@string/skip_for_now"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createPin_lblDescription" />
 

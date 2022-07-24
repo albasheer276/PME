@@ -14,6 +14,11 @@
             app:destination="@id/createProfileFragment"
             app:launchSingleTop="true"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/createProfileFragment"
@@ -30,5 +35,19 @@
         android:id="@+id/createPinFragment"
         android:name="it.basheer.pme.ui.first_use.CreatePinFragment"
         android:label="fragment_create_pin"
-        tools:layout="@layout/fragment_create_pin" />
+        tools:layout="@layout/fragment_create_pin" >
+        <action
+            android:id="@+id/action_createPinFragment_to_positiveTasksFragment"
+            app:destination="@id/positiveTasksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/positiveTasksFragment"
+        android:name="it.basheer.pme.ui.first_use.PositiveTasksFragment"
+        android:label="fragment_positive_tasks"
+        tools:layout="@layout/fragment_positive_tasks" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="it.basheer.pme.ui.main_fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>

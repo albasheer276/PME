@@ -11,4 +11,12 @@ class UserRepo @Inject constructor(appDatabase: AppDatabase) {
         return userDao.createUser(user)
     }
 
+    suspend fun updateUser(user: User) {
+        userDao.updateUser(user)
+    }
+
+    suspend fun getParentUser(): User {
+        return userDao.getParentUser()
+    }
+
 }

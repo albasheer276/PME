@@ -83,6 +83,9 @@ dependencies {
 
     //otp view
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
-    implementation 'com.github.aabhasr1:OtpView:v1.1.2-ktx' // kotlin
+
+    // recycler view
+    implementation 'com.jude:rollviewpager:1.4.6'
+    implementation 'com.jude:easyrecyclerview:4.4.3'
 
 }

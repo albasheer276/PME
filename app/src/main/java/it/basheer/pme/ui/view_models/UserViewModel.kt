@@ -8,6 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import it.basheer.pme.base.BaseViewModel
 import it.basheer.pme.data.model.User
 import it.basheer.pme.data.repo.UserRepo
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,5 +19,13 @@ class UserViewModel @Inject constructor(
 
     fun createUser(user: User) = liveData {
         emit(userRepo.createUser(user))
+    }
+
+    fun updateUser(user: User) = liveData {
+        emit(userRepo.updateUser(user))
+    }
+
+    fun getParentUser() = liveData {
+        emit(userRepo.getParentUser())
     }
 }
