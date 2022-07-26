@@ -44,10 +44,19 @@
         android:id="@+id/positiveTasksFragment"
         android:name="it.basheer.pme.ui.first_use.PositiveTasksFragment"
         android:label="fragment_positive_tasks"
-        tools:layout="@layout/fragment_positive_tasks" />
+        tools:layout="@layout/fragment_positive_tasks" >
+        <action
+            android:id="@+id/action_positiveTasksFragment_to_negativeTasksFragment"
+            app:destination="@id/negativeTasksFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="it.basheer.pme.ui.main_fragment.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/negativeTasksFragment"
+        android:name="it.basheer.pme.ui.first_use.NegativeTasksFragment"
+        android:label="fragment_negative_tasks"
+        tools:layout="@layout/fragment_negative_tasks" />
 </navigation>

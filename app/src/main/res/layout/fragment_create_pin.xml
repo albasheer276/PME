@@ -82,7 +82,7 @@
 
     <Button
         android:id="@+id/createPin_btnSetPin"
-        style="@style/PrimaryButton"
+        style="@style/BaseButton.PrimaryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -93,7 +93,7 @@
 
     <Button
         android:id="@+id/createPin_btnSkipPin"
-        style="@style/SecondaryButton"
+        style="@style/BaseButton.SecondaryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

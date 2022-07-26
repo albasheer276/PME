@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="32dp"
     android:paddingVertical="16dp"
-    tools:context=".ui.dialog.CreateTaskDialogFragment">
+    tools:context=".ui.dialog.CreatePositiveTaskDialogFragment">
 
     <TextView
-        android:id="@+id/createTask_lblTitle"
+        android:id="@+id/createPositiveTask_lblTitle"
         style="@style/HeadlineSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,24 +19,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/createTask_lblSubTitle"
+        android:id="@+id/createPositiveTask_lblSubTitle"
         style="@style/BodyMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/create_new_task"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createTask_lblTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/createPositiveTask_lblTitle" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/createTask_txtTaskName"
+        android:id="@+id/createPositiveTask_txtTaskName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createTask_lblSubTitle">
+        app:layout_constraintTop_toBottomOf="@+id/createPositiveTask_lblSubTitle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/createTask_txtTaskPeriod"
+        android:id="@+id/createPositiveTask_txtTaskPeriod"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
         app:endIconMode="dropdown_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createTask_txtTaskName">
+        app:layout_constraintTop_toBottomOf="@+id/createPositiveTask_txtTaskName">
 
         <AutoCompleteTextView
             android:layout_width="match_parent"
@@ -65,14 +65,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/createTask_txtTaskCount"
+        android:id="@+id/createPositiveTask_txtTaskCount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createTask_txtTaskPeriod">
+        app:layout_constraintTop_toBottomOf="@+id/createPositiveTask_txtTaskPeriod">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -83,14 +83,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/createTask_txtTaskDuration"
+        android:id="@+id/createPositiveTask_txtTaskDuration"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createTask_txtTaskCount">
+        app:layout_constraintTop_toBottomOf="@+id/createPositiveTask_txtTaskCount">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -101,14 +101,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/createTask_txtTaskPoints"
+        android:id="@+id/createPositiveTask_txtTaskPoints"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createTask_txtTaskDuration">
+        app:layout_constraintTop_toBottomOf="@+id/createPositiveTask_txtTaskDuration">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -117,6 +117,27 @@
             android:inputType="number"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/createPositiveTask_btnSave"
+        style="@style/TextButton.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/create"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createPositiveTask_txtTaskPoints" />
+
+    <Button
+        android:id="@+id/createPositiveTask_btnCancel"
+        style="@style/TextButton.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toStartOf="@+id/createPositiveTask_btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/createPositiveTask_txtTaskPoints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

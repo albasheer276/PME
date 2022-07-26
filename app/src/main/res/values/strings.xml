@@ -26,4 +26,16 @@
     <string name="task_count">Task Count</string>
     <string name="task_duration_min">Task Duration (min)</string>
     <string name="task_points">Task Points</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="required_field">Required Field</string>
+    <string name="create_task_success">Create task successfully</string>
+    <string name="dash">-</string>
+    <string name="times">times</string>
+    <string name="min">min</string>
+    <string name="pt">pt</string>
+    <string name="next">next</string>
+    <string name="the_tasks_you_want_to_avoid">The tasks you want to avoid</string>
+    <string name="let_s_create_the_tasks_you_want_to_avoid">Let\'s create the tasks you want to avoid</string>
+    <string name="once">once</string>
 </resources>
