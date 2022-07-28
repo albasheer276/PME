@@ -65,4 +65,6 @@
     <color name="md_theme_secondary95">#E8F2FF</color>
 
     <color name="md_theme_error95">#FFEDEA</color>
+
+    <color name="md_theme_tertiary95">#F9EDFF</color>
 </resources>

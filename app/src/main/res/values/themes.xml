@@ -90,6 +90,10 @@
         <item name="android:background">@drawable/dialog_rounded_secondary95_bg</item>
     </style>
 
+    <style name="RewardDialog">
+        <item name="android:background">@drawable/dialog_rounded_tertiary95_bg</item>
+    </style>
+
     <style name="NegativeTasksDialog">
         <item name="android:background">@drawable/dialog_rounded_error95_bg</item>
     </style>

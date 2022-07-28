@@ -38,4 +38,8 @@
     <string name="the_tasks_you_want_to_avoid">The tasks you want to avoid</string>
     <string name="let_s_create_the_tasks_you_want_to_avoid">Let\'s create the tasks you want to avoid</string>
     <string name="once">once</string>
+    <string name="rewards_list">Rewards List</string>
+    <string name="now_let_s_specify_the_rewards_for_you">Now let’s specify the rewards for you</string>
+    <string name="create_new_reward">Create new reward</string>
+    <string name="reward_name">Reward Name</string>
 </resources>

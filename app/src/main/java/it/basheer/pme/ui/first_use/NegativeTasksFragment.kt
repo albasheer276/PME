@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
@@ -52,7 +53,7 @@ class NegativeTasksFragment : Fragment() {
         }
 
         mBinding.firstNegativeBtnNext.setOnClickListener {
-
+            findNavController().navigate(R.id.action_negativeTasksFragment_to_rewardsFragment)
         }
     }
 
