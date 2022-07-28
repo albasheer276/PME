@@ -30,7 +30,7 @@
         <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
     </style>
 
-    <style name="DisplayMedium" parent="@style/TextAppearance.Material3.DisplayMedium">
+    <style name="DisplayMedium.InverseSurface" parent="@style/TextAppearance.Material3.DisplayMedium">
         <item name="android:textColor">@color/md_theme_dark_inverseSurface</item>
     </style>
 </resources>

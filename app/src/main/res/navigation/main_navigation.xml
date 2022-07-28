@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inner_navigation.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="it.basheer.pme.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/childrenFragment"
+        android:name="it.basheer.pme.ui.children.ChildrenFragment"
+        android:label="@string/menu_children"
+        tools:layout="@layout/fragment_children" />
+    <fragment
+        android:id="@+id/rewardFragment"
+        android:name="it.basheer.pme.ui.reward.RewardFragment"
+        android:label="@string/menu_rewards"
+        tools:layout="@layout/fragment_reward" />
+    <fragment
+        android:id="@+id/pinFragment"
+        android:name="it.basheer.pme.ui.pin.PinFragment"
+        android:label="@string/menu_pin"
+        tools:layout="@layout/fragment_pin" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="it.basheer.pme.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

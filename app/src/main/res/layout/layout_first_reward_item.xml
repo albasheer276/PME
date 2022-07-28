@@ -19,7 +19,7 @@
 
         <TextView
             android:id="@+id/taskItem_txtTaskName"
-            style="@style/LabelLarge"
+            style="@style/LabelLarge.OnSecondaryContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/taskItem_txtTaskPoints"
@@ -29,7 +29,7 @@
 
         <TextView
             android:id="@+id/taskItem_txtTaskPoints"
-            style="@style/LabelLarge"
+            style="@style/LabelLarge.OnSecondaryContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"

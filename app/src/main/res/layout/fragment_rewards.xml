@@ -58,10 +58,11 @@
 
     <TextView
         android:id="@+id/firstRewards_lblTitle"
-        style="@style/HeadlineMedium"
+        style="@style/HeadlineMedium.InverseSurface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textAlignment="center"
         android:text="@string/pme"
         app:layout_constraintBottom_toBottomOf="@+id/firstRewards_imgMain"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,10 +70,11 @@
 
     <TextView
         android:id="@+id/firstRewards_lblSubTitle"
-        style="@style/TitleMedium"
+        style="@style/TitleMedium.Secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rewards_list"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/firstRewards_imgMain"
         app:layout_constraintStart_toStartOf="@+id/firstRewards_lblTitle"
         app:layout_constraintTop_toBottomOf="@+id/firstRewards_imgMain" />

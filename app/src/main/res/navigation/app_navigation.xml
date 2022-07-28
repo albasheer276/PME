@@ -15,10 +15,11 @@
             app:launchSingleTop="true"
             app:popUpToInclusive="true" />
         <action
+            android:id="@+id/action_splashFragment_to_checkPinFragment"
+            app:destination="@id/checkPinFragment" />
+        <action
             android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-            app:launchSingleTop="true"
-            app:popUpToInclusive="true" />
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/createProfileFragment"
@@ -70,6 +71,15 @@
         tools:layout="@layout/fragment_rewards" >
         <action
             android:id="@+id/action_rewardsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkPinFragment"
+        android:name="it.basheer.pme.ui.pin.CheckPinFragment"
+        android:label="fragment_check_pin"
+        tools:layout="@layout/fragment_check_pin" >
+        <action
+            android:id="@+id/action_checkPinFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

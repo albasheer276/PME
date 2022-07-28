@@ -19,10 +19,11 @@
 
     <TextView
         android:id="@+id/textView"
-        style="@style/LabelSmall"
+        style="@style/LabelSmall.Secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAlignment="center"
         android:text="@string/loading_data"
         app:layout_constraintEnd_toEndOf="@+id/progressBar2"
         app:layout_constraintStart_toStartOf="@+id/progressBar2"

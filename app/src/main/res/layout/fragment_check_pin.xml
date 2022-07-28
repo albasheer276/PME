@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.first_use.CreatePinFragment">
+    tools:context=".ui.pin.CheckPinFragment">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/createPin_guide1"
+        android:id="@+id/checkPin_guide1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
 
     <ImageView
-        android:id="@+id/createPin_imgIcon"
+        android:id="@+id/checkPin_imgIcon"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -23,35 +23,35 @@
         android:src="@drawable/ic_main_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/createPin_guide1" />
+        app:layout_constraintTop_toTopOf="@+id/checkPin_guide1" />
 
     <TextView
-        android:id="@+id/createPin_lblTitle"
+        android:id="@+id/checkPin_lblTitle"
         style="@style/DisplayMedium.InverseSurface"
         android:layout_width="wrap_content"
         android:textAlignment="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/pme"
-        app:layout_constraintEnd_toEndOf="@+id/createPin_imgIcon"
-        app:layout_constraintStart_toStartOf="@+id/createPin_imgIcon"
-        app:layout_constraintTop_toBottomOf="@+id/createPin_imgIcon" />
+        app:layout_constraintEnd_toEndOf="@+id/checkPin_imgIcon"
+        app:layout_constraintStart_toStartOf="@+id/checkPin_imgIcon"
+        app:layout_constraintTop_toBottomOf="@+id/checkPin_imgIcon" />
 
     <TextView
-        android:id="@+id/createPin_lblSubTitle"
+        android:id="@+id/checkPin_lblSubTitle"
         style="@style/TitleMedium.Secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:layout_marginTop="32dp"
-        android:labelFor="@id/createPin_otp_view"
+        android:labelFor="@id/checkPin_otp_view"
         android:text="@string/pin_code"
-        app:layout_constraintEnd_toEndOf="@+id/createPin_imgIcon"
-        app:layout_constraintStart_toStartOf="@+id/createPin_imgIcon"
-        app:layout_constraintTop_toBottomOf="@+id/createPin_lblTitle" />
+        app:layout_constraintEnd_toEndOf="@+id/checkPin_imgIcon"
+        app:layout_constraintStart_toStartOf="@+id/checkPin_imgIcon"
+        app:layout_constraintTop_toBottomOf="@+id/checkPin_lblTitle" />
 
     <com.mukesh.OtpView
-        android:id="@+id/createPin_otp_view"
+        android:id="@+id/checkPin_otp_view"
         style="@style/PinStyle.OnBackground"
         android:layout_width="wrap_content"
         android:textAlignment="center"
@@ -66,14 +66,15 @@
         app:OtpItemSpacing="16dp"
         app:OtpItemWidth="48dp"
         app:OtpViewType="rectangle"
+        app:OtpMaskingChar="*"
         app:OtpLineColor="@color/md_theme_light_onBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPin_lblSubTitle"
+        app:layout_constraintTop_toBottomOf="@+id/checkPin_lblSubTitle"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/createPin_lblDescription"
+        android:id="@+id/checkPin_lblDescription"
         style="@style/LabelMedium.Secondary"
         android:layout_width="wrap_content"
         android:textAlignment="center"
@@ -82,28 +83,7 @@
         android:text="@string/pin_used_the_app"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPin_otp_view" />
+        app:layout_constraintTop_toBottomOf="@+id/checkPin_otp_view" />
 
-    <Button
-        android:id="@+id/createPin_btnSetPin"
-        style="@style/BaseButton.PrimaryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/set_pin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPin_lblDescription" />
-
-    <Button
-        android:id="@+id/createPin_btnSkipPin"
-        style="@style/BaseButton.SecondaryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/skip_for_now"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPin_lblDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

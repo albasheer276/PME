@@ -14,10 +14,9 @@
         android:contentDescription="@string/app_name"
         android:orientation="vertical"
         android:src="@drawable/ic_main_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/splash_guide"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/splash_guide"
@@ -28,14 +27,13 @@
 
     <TextView
         android:id="@+id/splash_lblTitle"
-        style="@style/DisplayMedium"
+        style="@style/DisplayMedium.InverseSurface"
         android:layout_width="wrap_content"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
         android:text="@string/pme"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/splash_guide"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toTopOf="@+id/splash_guide" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

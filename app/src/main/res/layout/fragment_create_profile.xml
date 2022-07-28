@@ -27,8 +27,9 @@
 
     <TextView
         android:id="@+id/createProfile_lblTitle"
-        style="@style/DisplayMedium"
+        style="@style/DisplayMedium.InverseSurface"
         android:layout_width="wrap_content"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/pme"
@@ -38,9 +39,10 @@
 
     <TextView
         android:id="@+id/createProfile_lblSubTitle"
-        style="@style/TitleMedium"
+        style="@style/TitleMedium.Secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:layout_marginTop="8dp"
         android:text="@string/subTitle"
         app:layout_constraintEnd_toEndOf="@+id/createProfile_imgIcon"

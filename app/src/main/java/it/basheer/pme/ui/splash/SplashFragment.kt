@@ -38,28 +38,20 @@ class SplashFragment : Fragment() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                TransitionManager.beginDelayedTransition(mBinding.root, AutoTransition().setDuration(500))
-                val layoutParams = mBinding.splashImgIcon.layoutParams as ConstraintLayout.LayoutParams
-                layoutParams.bottomToTop = mBinding.splashGuide.id
-                layoutParams.topToTop = ConstraintLayout.LayoutParams.UNSET
-                mBinding.splashImgIcon.layoutParams = layoutParams
-                mBinding.splashLblTitle.visibility = View.VISIBLE
-
-            }, 250
-        )
-
-        Handler(Looper.getMainLooper()).postDelayed(
-            {
                 userViewModel.getParentUser().observe(viewLifecycleOwner) { user ->
-                    //if (user == null){
+                    if (user == null) {
                         findNavController().navigate(R.id.action_splashFragment_to_createProfileFragment)
                         return@observe
-                   //B }
+                    }
                     BaseApp.getInstance().user = user
-                    findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
+                    if(user.pin == null){
+                        findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
+                        return@observe
+                    }
+                    findNavController().navigate(R.id.action_splashFragment_to_checkPinFragment)
                 }
 
-            }, 1000
+            }, 500
         )
     }
 }

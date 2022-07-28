@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/taskItem_txtTaskName"
-            style="@style/LabelLarge"
+            style="@style/LabelLarge.OnSecondaryContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/taskItem_txtTaskPoints"
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/taskItem_txtTaskPoints"
-            style="@style/LabelLarge"
+            style="@style/LabelLarge.OnSecondaryContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,9 +38,10 @@
 
         <TextView
             android:id="@+id/taskItem_txtTaskCount"
-            style="@style/LabelMedium"
+            style="@style/LabelMedium.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
@@ -48,9 +49,10 @@
 
         <TextView
             android:id="@+id/taskItem_txtTaskDuration"
-            style="@style/LabelMedium"
+            style="@style/LabelMedium.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/taskItem_txtTaskCount"
             app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
