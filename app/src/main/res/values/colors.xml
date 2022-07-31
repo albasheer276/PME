@@ -60,11 +60,21 @@
     <color name="md_theme_dark_surfaceTint">#96CBFF</color>
     <color name="md_theme_dark_surfaceTintColor">#96CBFF</color>
 
+    <color name="md_theme_primary70">#64B1F3</color>
+    <color name="md_theme_primary90">#CEE5FF</color>
+    <color name="md_theme_primary99">#FCFCFF</color>
+
     <color name="md_theme_secondary0">#000000</color>
     <color name="md_theme_secondary10">#0E1D2A</color>
     <color name="md_theme_secondary95">#E8F2FF</color>
 
+    <color name="md_theme_error99">#FFFBFF</color>
     <color name="md_theme_error95">#FFEDEA</color>
+    <color name="md_theme_error70">#FF897D</color>
 
     <color name="md_theme_tertiary95">#F9EDFF</color>
+
+    <color name="md_theme_light_surface1">#EFF4FA</color>
+    <color name="md_theme_light_surface2">#E8F0F7</color>
+    <color name="md_theme_light_surface5">#D8E6F1</color>
 </resources>

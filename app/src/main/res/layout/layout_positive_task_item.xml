@@ -11,9 +11,10 @@
     app:cardCornerRadius="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/taskItem_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/card_bordered_bg_primary90"
+        android:background="@drawable/card_bordered_bg_primary99"
         android:padding="16dp">
 
         <TextView
@@ -68,10 +69,10 @@
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/taskItem_txtDash"
             app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
-            tools:text="3 times" />
+            tools:text="0 / 3" />
 
         <TextView
-            android:id="@+id/taskItem_txtTaskDuration"
+            android:id="@+id/taskItem_txtTaskStatus"
             style="@style/LabelMedium.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,6 +81,17 @@
             android:textAlignment="center"
             app:layout_constraintStart_toEndOf="@+id/taskItem_txtTaskCount"
             app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
-            tools:text="(30 min)" />
+            tools:text="todo" />
+
+        <TextView
+            android:id="@+id/taskItem_txtTaskDuration"
+            style="@style/LabelMedium.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
+            tools:text="30 min" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

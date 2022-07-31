@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="it.basheer.pme.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/pme"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/childrenFragment"

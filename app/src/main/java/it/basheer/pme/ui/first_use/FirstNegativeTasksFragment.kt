@@ -13,16 +13,16 @@ import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
 import it.basheer.pme.ui.adapter.FirstNegativeTaskAdapter
 import it.basheer.pme.base.BaseApp
-import it.basheer.pme.databinding.FragmentNegativeTasksBinding
+import it.basheer.pme.databinding.FragmentFirstNegativeTasksBinding
 import it.basheer.pme.ui.dialog.CreateNegativeTaskDialogFragment
 import it.basheer.pme.ui.view_models.TaskViewModel
 import it.basheer.pme.util.NEGATIVE_TASKS_TYPE
 import it.basheer.pme.util.hideKeyboard
 
 @AndroidEntryPoint
-class NegativeTasksFragment : Fragment() {
+class FirstNegativeTasksFragment : Fragment() {
 
-    private lateinit var mBinding: FragmentNegativeTasksBinding
+    private lateinit var mBinding: FragmentFirstNegativeTasksBinding
     private lateinit var mFirstNegativeTaskAdapter: FirstNegativeTaskAdapter
 
     private val taskViewModel: TaskViewModel by viewModels()
@@ -31,7 +31,7 @@ class NegativeTasksFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        mBinding = FragmentNegativeTasksBinding.inflate(inflater)
+        mBinding = FragmentFirstNegativeTasksBinding.inflate(inflater)
         return mBinding.root
     }
 

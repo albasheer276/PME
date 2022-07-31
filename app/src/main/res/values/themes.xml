@@ -84,12 +84,20 @@
         <item name="android:textColor">@color/md_theme_light_onPrimary</item>
     </style>
 
+    <style name="TitleMedium.OnBackground" parent="@style/TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/md_theme_light_onBackground</item>
+    </style>
+
     <style name="LabelLarge.OnSecondaryContainer" parent="@style/TextAppearance.Material3.LabelLarge">
         <item name="android:textColor">@color/md_theme_light_onSecondaryContainer</item>
     </style>
 
     <style name="LabelMedium.Secondary" parent="@style/TextAppearance.Material3.LabelMedium">
         <item name="android:textColor">@color/md_theme_light_secondary</item>
+    </style>
+
+    <style name="BodyLarge.Error" parent="@style/TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/md_theme_light_error</item>
     </style>
 
     <style name="LabelSmall.Secondary" parent="@style/TextAppearance.Material3.LabelSmall">
@@ -148,5 +156,9 @@
     <style name="TextButton.Secondary" parent="TextButton">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/md_theme_light_secondary</item>
+    </style>
+
+    <style name="TapStyle" parent="@style/BodyMedium.OnSurfaceVariant">
+        <item name="tabSelectedTextColor">@color/md_theme_light_primary</item>
     </style>
 </resources>

@@ -1,13 +1,7 @@
 package it.basheer.pme.data.model
 
-import androidx.room.Entity
-import androidx.room.Ignore
-import androidx.room.PrimaryKey
-
-@Entity(tableName = "tasks")
-data class Task(
-    @PrimaryKey(autoGenerate = true)
-    var id: Long? = null,
+data class ActiveTasks(
+    val id: Long? = null,
     val name: String,
     val period: String,
     val count: Int? = null,
@@ -15,4 +9,6 @@ data class Task(
     val points: Int,
     val type: Int,
     val user_id: Long,
+    val completed: Int? = 0,
+    var status: Int? = 0
 )

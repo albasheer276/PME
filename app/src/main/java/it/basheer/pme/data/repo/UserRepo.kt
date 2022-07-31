@@ -18,5 +18,4 @@ class UserRepo @Inject constructor(appDatabase: AppDatabase) {
     suspend fun getParentUser(): User {
         return userDao.getParentUser()
     }
-
 }

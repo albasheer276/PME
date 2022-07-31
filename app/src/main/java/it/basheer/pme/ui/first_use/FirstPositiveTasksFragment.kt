@@ -13,16 +13,16 @@ import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
 import it.basheer.pme.ui.adapter.FirstPositiveTaskAdapter
 import it.basheer.pme.base.BaseApp
-import it.basheer.pme.databinding.FragmentPositiveTasksBinding
+import it.basheer.pme.databinding.FragmentFirstPositiveTasksBinding
 import it.basheer.pme.ui.dialog.CreatePositiveTaskDialogFragment
 import it.basheer.pme.ui.view_models.TaskViewModel
 import it.basheer.pme.util.POSITIVE_TASKS_TYPE
 import it.basheer.pme.util.hideKeyboard
 
 @AndroidEntryPoint
-class PositiveTasksFragment : Fragment() {
+class FirstPositiveTasksFragment : Fragment() {
 
-    private lateinit var mBinding: FragmentPositiveTasksBinding
+    private lateinit var mBinding: FragmentFirstPositiveTasksBinding
     private lateinit var mFirstPositiveTaskAdapter: FirstPositiveTaskAdapter
 
 
@@ -32,7 +32,7 @@ class PositiveTasksFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        mBinding = FragmentPositiveTasksBinding.inflate(inflater)
+        mBinding = FragmentFirstPositiveTasksBinding.inflate(inflater)
         return mBinding.root
     }
 

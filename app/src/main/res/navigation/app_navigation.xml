@@ -43,9 +43,9 @@
     </fragment>
     <fragment
         android:id="@+id/positiveTasksFragment"
-        android:name="it.basheer.pme.ui.first_use.PositiveTasksFragment"
+        android:name="it.basheer.pme.ui.first_use.FirstPositiveTasksFragment"
         android:label="fragment_positive_tasks"
-        tools:layout="@layout/fragment_positive_tasks" >
+        tools:layout="@layout/fragment_first_positive_tasks" >
         <action
             android:id="@+id/action_positiveTasksFragment_to_negativeTasksFragment"
             app:destination="@id/negativeTasksFragment" />
@@ -57,9 +57,9 @@
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/negativeTasksFragment"
-        android:name="it.basheer.pme.ui.first_use.NegativeTasksFragment"
+        android:name="it.basheer.pme.ui.first_use.FirstNegativeTasksFragment"
         android:label="fragment_negative_tasks"
-        tools:layout="@layout/fragment_negative_tasks" >
+        tools:layout="@layout/fragment_first_negative_tasks" >
         <action
             android:id="@+id/action_negativeTasksFragment_to_rewardsFragment"
             app:destination="@id/rewardsFragment" />

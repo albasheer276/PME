@@ -11,9 +11,10 @@
     app:cardCornerRadius="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/taskItem_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/card_bordered_bg_primary90"
+        android:background="@drawable/card_bordered_bg_error95"
         android:padding="16dp">
 
         <TextView
@@ -35,51 +36,27 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="30" />
 
+
         <TextView
-            android:id="@+id/taskItem_txtTaskPeriod"
+            android:id="@+id/taskItem_txtTaskStatus"
             style="@style/LabelMedium.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:textAlignment="center"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
-            tools:text="Daily" />
-
-        <TextView
-            android:id="@+id/taskItem_txtDash"
-            style="@style/LabelMedium.Secondary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
-            android:textAlignment="center"
-            android:text="@string/dash"
-            app:layout_constraintStart_toEndOf="@+id/taskItem_txtTaskPeriod"
-            app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName" />
-
-        <TextView
-            android:id="@+id/taskItem_txtTaskCount"
-            style="@style/LabelMedium.Secondary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:textAlignment="center"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@+id/taskItem_txtDash"
-            app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
-            tools:text="3 times" />
+            tools:text="1 time" />
 
         <TextView
             android:id="@+id/taskItem_txtTaskDuration"
             style="@style/LabelMedium.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
             android:textAlignment="center"
-            app:layout_constraintStart_toEndOf="@+id/taskItem_txtTaskCount"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
-            tools:text="(30 min)" />
+            tools:text="30 min" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -4,15 +4,12 @@ import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "tasks")
-data class Task(
+@Entity(tableName = "tasks_log")
+data class TaskLog(
     @PrimaryKey(autoGenerate = true)
     var id: Long? = null,
-    val name: String,
-    val period: String,
-    val count: Int? = null,
-    val duration: Int? = null,
-    val points: Int,
-    val type: Int,
     val user_id: Long,
+    val task_id: Long,
+    val points: Int,
+    val date: String,
 )

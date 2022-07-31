@@ -24,4 +24,12 @@ class TaskViewModel @Inject constructor(
     fun getTasks(type: Int, userId: Long) = liveData {
         emit(taskRepo.getTasks(type, userId))
     }
+
+    fun getActiveTasks(type: Int, userId: Long, date: String, startWeek: String, startMonth: String) = liveData {
+        val tasks = taskRepo.getActiveTasks(type, userId, date, startWeek, startMonth)
+        tasks.map { task ->
+            task.status = if (task.completed == 0) 0 else if (task.completed!! < task.count!!) 1 else 2
+        }
+        emit(tasks)
+    }
 }

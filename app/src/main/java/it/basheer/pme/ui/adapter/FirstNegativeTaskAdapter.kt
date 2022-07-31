@@ -30,22 +30,22 @@ class FirstNegativeTaskAdapter(private val mContext: Context) : RecyclerArrayAda
                 taskItemTxtTaskName.text = data.name
                 taskItemTxtTaskPoints.text = "${data.points} ${context.resources.getString(R.string.pt)}"
 
-                if (data.count!! == 0) {
-                    taskItemTxtTaskCount.visibility = View.GONE
-                } else {
-                    taskItemTxtTaskCount.visibility = View.VISIBLE
-                    if (data.count == 1) {
+                when {
+                    data.count!! == 0 -> {
+                        taskItemTxtTaskCount.text = ""
+                    }
+                    data.count == 1 -> {
                         taskItemTxtTaskCount.text = "${data.count} ${context.resources.getString(R.string.once)}"
-                    } else {
+                    }
+                    else -> {
                         taskItemTxtTaskCount.text = "${data.count} ${context.resources.getString(R.string.times)}"
                     }
                 }
 
-                if (data.duration!! == 0) {
-                    taskItemTxtTaskDuration.visibility = View.GONE
-                } else {
-                    taskItemTxtTaskDuration.visibility = View.VISIBLE
+                if (data.duration!! != 0) {
                     taskItemTxtTaskDuration.text = "${data.duration} ${context.resources.getString(R.string.min)}"
+                } else {
+                    taskItemTxtTaskDuration.text = ""
                 }
             }
         }

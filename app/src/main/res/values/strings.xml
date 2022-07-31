@@ -49,4 +49,15 @@
     <string name="menu_children">Children</string>
     <string name="menu_pin">PIN Code</string>
     <string name="current_points">Current Points:</string>
+    <string name="forgot_pin_code">Forgot PIN Code?</string>
+    <string name="good_tasks">Good Tasks</string>
+    <string name="bad_tasks">Bad Tasks</string>
+    <string name="let_s_convert_them_to_blue">let’s convert them to blue 💪</string>
+    <string name="keep_yourself_away_from_these_keep_it_white">Keep yourself away from these, keep it white 💪</string>
+    <string name="slash">/</string>
+    <string name="todo">todo</string>
+    <string name="in_progress">in-progress</string>
+    <string name="done">done</string>
+    <string name="free">free</string>
+    <string name="down">down</string>
 </resources>
