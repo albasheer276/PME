@@ -41,8 +41,9 @@ class CreatePinFragment : Fragment() {
                 Toast.makeText(context, getString(R.string.pin_4_digits), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            BaseApp.getInstance().user?.let { mainUser ->
+            BaseApp.getInstance().getUser().value?.let { mainUser ->
                 mainUser.pin = pin.toInt()
+                BaseApp.getInstance().setUser(mainUser)
                 userViewModel.updateUser(mainUser).observe(viewLifecycleOwner) {
                     findNavController().navigate(R.id.action_createPinFragment_to_positiveTasksFragment)
                 }

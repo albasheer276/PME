@@ -70,7 +70,7 @@ class RewardsFragment : Fragment() {
 
     private fun loadData() {
         mBinding.firstRewardsRvRewards.showProgress()
-        rewardViewModel.getRewards(BaseApp.getInstance().user?.id!!).observe(viewLifecycleOwner) { tasks ->
+        rewardViewModel.getRewards(BaseApp.getInstance().getUser().value?.id!!).observe(viewLifecycleOwner) { tasks ->
             mFirstRewardsTaskAdapter.addAll(tasks)
             if (tasks.isEmpty()) {
                 mBinding.firstRewardsRvRewards.showEmpty()

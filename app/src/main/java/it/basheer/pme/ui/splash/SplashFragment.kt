@@ -43,8 +43,8 @@ class SplashFragment : Fragment() {
                         findNavController().navigate(R.id.action_splashFragment_to_createProfileFragment)
                         return@observe
                     }
-                    BaseApp.getInstance().user = user
-                    if(user.pin == null){
+                    BaseApp.getInstance().setUser(user)
+                    if (user.pin == null) {
                         findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
                         return@observe
                     }

@@ -4,8 +4,9 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import it.basheer.pme.data.model.ActiveTasks
+import it.basheer.pme.data.model.ActiveTask
 import it.basheer.pme.data.model.Task
+import it.basheer.pme.data.model.TaskLog
 
 @Dao
 interface TaskDao {
@@ -21,9 +22,9 @@ interface TaskDao {
 
     @Query(
         "SELECT *, case period " +
-                "WHEN 'Weekly' THEN (SELECT COUNT(*) FROM tasks_log where task_id = tasks.id and  date >= :startWeek) " +
-                "WHEN 'Monthly' THEN (SELECT COUNT(*) FROM tasks_log where task_id = tasks.id and date >= :startMonth) " +
-                "ELSE (SELECT COUNT(*) FROM tasks_log where task_id = tasks.id and date >= :date) " +
+                "WHEN 'Weekly' THEN (SELECT COUNT(*) FROM tasks_log where task_id = tasks.id and  Datetime(date) >= Datetime(:startWeek)) " +
+                "WHEN 'Monthly' THEN (SELECT COUNT(*) FROM tasks_log where task_id = tasks.id and Datetime(date) >= Datetime(:startMonth)) " +
+                "ELSE (SELECT COUNT(*) FROM tasks_log where task_id = tasks.id and Datetime(date) >= Datetime(:date)) " +
                 "END as completed " +
                 "FROM tasks where user_id = :userId and type = :type " +
                 "ORDER BY" +
@@ -41,5 +42,8 @@ interface TaskDao {
                 "    ELSE 2" +
                 "  END"
     )
-    suspend fun getActiveTasks(type: Int, userId: Long, date: String, startWeek: String, startMonth: String): List<ActiveTasks>
+    suspend fun getActiveTasks(type: Int, userId: Long, date: String, startWeek: String, startMonth: String): List<ActiveTask>
+
+    @Insert
+    suspend fun createTaskLog(taskLog: TaskLog)
 }

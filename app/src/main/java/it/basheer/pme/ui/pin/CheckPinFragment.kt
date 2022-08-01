@@ -34,9 +34,9 @@ class CheckPinFragment : Fragment() {
         mBinding.checkPinOtpView.requestFocus()
         showKeyboard()
 
-        mBinding.checkPinOtpView.doOnTextChanged { text, _, _, count ->
+        mBinding.checkPinOtpView.doOnTextChanged { text, _, _, _ ->
             if (text.toString().length == 4) {
-                val user = BaseApp.getInstance().user ?: return@doOnTextChanged
+                val user = BaseApp.getInstance().getUser().value ?: return@doOnTextChanged
                 if (user.pin == text.toString().toInt()) {
                     Handler(Looper.getMainLooper()).postDelayed({
                         mBinding.checkPinTxtError.visibility = View.INVISIBLE

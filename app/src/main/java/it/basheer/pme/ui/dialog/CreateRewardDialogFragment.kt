@@ -86,7 +86,7 @@ class CreateRewardDialogFragment(private val onClickListener: (reward: Reward) -
                 val reward = Reward(
                     name = name,
                     points = points.toInt(),
-                    user_id = BaseApp.getInstance().user?.id ?: 0
+                    user_id = BaseApp.getInstance().getUser().value?.id ?: 0
                 )
                 onClickListener(reward)
                 this.dismiss()

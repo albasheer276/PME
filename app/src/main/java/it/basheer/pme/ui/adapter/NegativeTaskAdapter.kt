@@ -4,30 +4,29 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Configuration
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import com.jude.easyrecyclerview.adapter.BaseViewHolder
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 import it.basheer.pme.R
-import it.basheer.pme.data.model.ActiveTasks
+import it.basheer.pme.data.model.ActiveTask
 import it.basheer.pme.databinding.LayoutNegativeTaskItemBinding
-import it.basheer.pme.databinding.LayoutPositiveTaskItemBinding
 
-class NegativeTaskAdapter(private val mContext: Context) : RecyclerArrayAdapter<ActiveTasks>(mContext) {
+class NegativeTaskAdapter(private val mContext: Context, private val onClickListener: (activeTask: ActiveTask) -> Unit) : RecyclerArrayAdapter<ActiveTask>(mContext) {
 
     override fun OnCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val binding =
             LayoutNegativeTaskItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(mContext, binding)
+        return MyViewHolder(mContext, binding, onClickListener)
     }
 
     class MyViewHolder(
         private val mContext: Context,
-        private val binding: LayoutNegativeTaskItemBinding
-    ) : BaseViewHolder<ActiveTasks>(binding.root) {
+        private val binding: LayoutNegativeTaskItemBinding,
+        private val onClickListener: (activeTask: ActiveTask) -> Unit
+    ) : BaseViewHolder<ActiveTask>(binding.root) {
 
         @SuppressLint("LongLogTag", "SetTextI18n")
-        override fun setData(data: ActiveTasks) {
+        override fun setData(data: ActiveTask) {
             binding.apply {
                 taskItemTxtTaskName.text = data.name
                 taskItemTxtTaskPoints.text = "${data.points} ${context.resources.getString(R.string.pt)}"
@@ -60,6 +59,10 @@ class NegativeTaskAdapter(private val mContext: Context) : RecyclerArrayAdapter<
                     taskItemTxtTaskDuration.text = "${data.duration} ${mContext.resources.getString(R.string.min)}"
                 } else {
                     taskItemTxtTaskDuration.text = ""
+                }
+
+                taskItemLayout.setOnClickListener {
+                    onClickListener(data)
                 }
             }
         }

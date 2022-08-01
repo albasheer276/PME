@@ -60,4 +60,7 @@
     <string name="done">done</string>
     <string name="free">free</string>
     <string name="down">down</string>
+    <string name="current_progress">Current Progress</string>
+    <string name="add_new_progress">Add New Progress</string>
+    <string name="today_progress">Today Progress</string>
 </resources>

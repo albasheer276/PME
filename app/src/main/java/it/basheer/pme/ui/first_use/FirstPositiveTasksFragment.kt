@@ -68,7 +68,7 @@ class FirstPositiveTasksFragment : Fragment() {
 
     private fun loadData() {
         mBinding.firstPositiveRvTasks.showProgress()
-        taskViewModel.getTasks(POSITIVE_TASKS_TYPE, BaseApp.getInstance().user?.id!!).observe(viewLifecycleOwner) { tasks ->
+        taskViewModel.getTasks(POSITIVE_TASKS_TYPE, BaseApp.getInstance().getUser().value?.id!!).observe(viewLifecycleOwner) { tasks ->
             mFirstPositiveTaskAdapter.addAll(tasks)
             if (tasks.isEmpty()) {
                 mBinding.firstPositiveRvTasks.showEmpty()

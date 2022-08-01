@@ -62,7 +62,7 @@ class CreateProfileFragment : Fragment() {
             is_child = false
         )
         userViewModel.createUser(user).observe(viewLifecycleOwner) { id ->
-            BaseApp.getInstance().user = user.copy(id = id)
+            BaseApp.getInstance().setUser(user.copy(id = id))
             findNavController().navigate(R.id.action_createProfileFragment_to_createPinFragment)
         }
     }

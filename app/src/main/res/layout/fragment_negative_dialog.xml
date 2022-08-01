@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/NegativeTasksDialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="32dp"
+    android:paddingVertical="16dp"
+    tools:context=".ui.dialog.PositiveTaskDialogFragment">
+
+    <TextView
+        android:id="@+id/negativeTask_lblTitle"
+        style="@style/HeadlineSmall.OnSurface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pme"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/negativeTask_txtTaskName"
+        style="@style/LabelLarge.OnSecondaryContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/negativeTask_txtTaskPoints"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/negativeTask_lblTitle"
+        tools:text="Read 10 pages from Book" />
+
+    <TextView
+        android:id="@+id/negativeTask_txtTaskPoints"
+        style="@style/LabelLarge.OnSecondaryContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/negativeTask_txtTaskName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/negativeTask_txtTaskName"
+        tools:text="30" />
+
+
+    <TextView
+        android:id="@+id/negativeTask_txtTaskStatus"
+        style="@style/LabelMedium.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/negativeTask_txtTaskName"
+        tools:text="free" />
+
+    <TextView
+        android:id="@+id/negativeTask_txtTaskDuration"
+        style="@style/LabelMedium.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/negativeTask_txtTaskName"
+        tools:text="30 min" />
+
+    <View
+        android:id="@+id/view"
+        style="@style/Divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/negativeTask_txtTaskDuration" />
+
+    <TextView
+        android:id="@+id/negativeTask_lblCurrentProgress"
+        style="@style/LabelMedium.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/today_progress"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/negativeTask_rvProgress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:maxHeight="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/negativeTask_lblCurrentProgress"
+        app:layout_empty="@layout/empty_data_layout"
+        app:layout_progress="@layout/loading_layout"
+        app:scrollbars="none"
+        tools:layout_height="200dp" />
+
+    <Button
+        android:id="@+id/negativeTask_btnSave"
+        style="@style/TextButton.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/add_new_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/negativeTask_rvProgress" />
+
+    <Button
+        android:id="@+id/negativeTask_btnCancel"
+        style="@style/TextButton.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toStartOf="@+id/negativeTask_btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/negativeTask_rvProgress" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

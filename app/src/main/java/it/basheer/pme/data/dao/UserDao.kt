@@ -13,7 +13,7 @@ interface UserDao {
     suspend fun createUser(user: User): Long
 
     @Update
-    suspend fun updateUser(user: User)
+    suspend fun updateUser(user: User): Int
 
     @Query("SELECT * FROM user where is_child = 0")
     suspend fun getParentUser(): User

@@ -8,29 +8,32 @@ import android.view.ViewGroup
 import com.jude.easyrecyclerview.adapter.BaseViewHolder
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 import it.basheer.pme.R
-import it.basheer.pme.data.model.ActiveTasks
+import it.basheer.pme.data.model.ActiveTask
 import it.basheer.pme.databinding.LayoutPositiveTaskItemBinding
 
-class PositiveTaskAdapter(private val mContext: Context) : RecyclerArrayAdapter<ActiveTasks>(mContext) {
+class PositiveTaskAdapter(private val mContext: Context, private val onClickListener: (activeTask: ActiveTask) -> Unit) :
+    RecyclerArrayAdapter<ActiveTask>(mContext) {
 
     override fun OnCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val binding =
             LayoutPositiveTaskItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(mContext, binding)
+        return MyViewHolder(mContext, binding, onClickListener)
     }
 
     class MyViewHolder(
         private val mContext: Context,
-        private val binding: LayoutPositiveTaskItemBinding
-    ) : BaseViewHolder<ActiveTasks>(binding.root) {
+        private val binding: LayoutPositiveTaskItemBinding,
+        private val onClickListener: (activeTask: ActiveTask) -> Unit
+    ) : BaseViewHolder<ActiveTask>(binding.root) {
 
         @SuppressLint("LongLogTag", "SetTextI18n")
-        override fun setData(data: ActiveTasks) {
+        override fun setData(data: ActiveTask) {
             binding.apply {
                 taskItemTxtTaskName.text = data.name
-                taskItemTxtTaskPoints.text = "${data.points} ${context.resources.getString(R.string.pt)}"
+                taskItemTxtTaskPoints.text = "${data.points} ${mContext.resources.getString(R.string.pt)}"
                 taskItemTxtTaskPeriod.text = data.period
                 taskItemTxtTaskCount.text = "${data.completed} ${mContext.resources.getString(R.string.slash)} ${data.count}"
+                taskItemTxtTaskDuration.text = "${data.duration} ${mContext.resources.getString(R.string.min)}"
 
                 when (data.status) {
                     0 -> {
@@ -68,7 +71,9 @@ class PositiveTaskAdapter(private val mContext: Context) : RecyclerArrayAdapter<
                     }
                 }
 
-                taskItemTxtTaskDuration.text = "${data.duration} ${mContext.resources.getString(R.string.min)}"
+                taskItemLayout.setOnClickListener {
+                    onClickListener(data)
+                }
             }
         }
 

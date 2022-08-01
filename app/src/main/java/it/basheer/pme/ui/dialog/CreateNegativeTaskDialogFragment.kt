@@ -133,7 +133,7 @@ class CreateNegativeTaskDialogFragment(private val onClickListener: (task: Task)
                     duration = if (duration.isEmpty() || !isTimingTask) 0 else duration.toInt(),
                     points = points.toInt(),
                     type = NEGATIVE_TASKS_TYPE,
-                    user_id = BaseApp.getInstance().user?.id ?: 0
+                    user_id = BaseApp.getInstance().getUser().value?.id ?: 0
                 )
                 onClickListener(task)
                 this.dismiss()

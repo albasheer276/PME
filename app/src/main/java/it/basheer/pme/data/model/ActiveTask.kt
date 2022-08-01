@@ -1,6 +1,6 @@
 package it.basheer.pme.data.model
 
-data class ActiveTasks(
+data class ActiveTask(
     val id: Long? = null,
     val name: String,
     val period: String,

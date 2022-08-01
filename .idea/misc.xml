@@ -26,6 +26,7 @@
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/font/reem_kufi_font.xml" value="0.36018518518518516" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/activity_main.xml" value="0.371875" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/content_main.xml" value="0.35185185185185186" />
+        <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/empty_data_layout.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/empty_layout.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/empty_negative_layout.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/empty_positive_layout.xml" value="0.35185185185185186" />
@@ -41,9 +42,11 @@
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_first_negative_tasks.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_home.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_main.xml" value="0.35185185185185186" />
+        <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_negative_dialog.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_negative_tasks.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_negative_tasks2.xml" value="0.19166666666666668" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_pin.xml" value="0.35185185185185186" />
+        <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_positive_dialog.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_positive_tasks.xml" value="0.35185185185185186" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_positive_tasks2.xml" value="0.19166666666666668" />
         <entry key="..\:/Code/Android/App/PME/app/src/main/res/layout/fragment_profile.xml" value="0.35185185185185186" />

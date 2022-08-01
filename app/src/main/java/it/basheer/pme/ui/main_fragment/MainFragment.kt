@@ -75,12 +75,12 @@ class MainFragment : Fragment() {
             navController.navigateUp(appBarConfiguration)
         }
 
-        val user = BaseApp.getInstance().user
-        mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtProfileName).text = user?.name
-        mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtProfilePoints).text =
-            "${user?.points.toString()} ${requireActivity().resources.getString(R.string.pt)}"
-        mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtPoints).text = user?.points.toString()
-
+        BaseApp.getInstance().getUser().observe(viewLifecycleOwner) { user ->
+            mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtProfileName).text = user?.name
+            mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtProfilePoints).text =
+                "${user?.points.toString()} ${requireActivity().resources.getString(R.string.pt)}"
+            mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtPoints).text = user?.points.toString()
+        }
     }
 
 }

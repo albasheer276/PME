@@ -5,6 +5,7 @@ import androidx.lifecycle.liveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import it.basheer.pme.base.BaseViewModel
 import it.basheer.pme.data.model.Task
+import it.basheer.pme.data.model.TaskLog
 import it.basheer.pme.data.repo.TaskRepo
 import javax.inject.Inject
 
@@ -31,5 +32,9 @@ class TaskViewModel @Inject constructor(
             task.status = if (task.completed == 0) 0 else if (task.completed!! < task.count!!) 1 else 2
         }
         emit(tasks)
+    }
+
+    fun createTaskLog(taskLog: TaskLog) = liveData {
+        emit(taskRepo.createTaskLog(taskLog))
     }
 }
