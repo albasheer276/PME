@@ -11,5 +11,6 @@ data class User(
     var pin: Int? = null,
     var email: String? = null,
     var is_child: Boolean = true,
-    var points: Int = 0
+    var points: Int = 0,
+    var is_selected: Boolean = false
 )

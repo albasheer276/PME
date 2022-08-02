@@ -1,14 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/profile_guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/profile_imgIcon"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:orientation="vertical"
+        android:src="@drawable/ic_main_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profile_guide1" />
+
+    <TextView
+        android:id="@+id/profile_lblTitle"
+        style="@style/DisplayMedium.InverseSurface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/pme"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/profile_imgIcon"
+        app:layout_constraintStart_toStartOf="@+id/profile_imgIcon"
+        app:layout_constraintTop_toBottomOf="@+id/profile_imgIcon" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/profile_txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_lblTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_your_name"
+            android:imeOptions="actionDone"
+            android:inputType="textPersonName|textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/profile_btnChange"
+        style="@style/BaseButton.PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/change_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_txtName" />
+
+    <View
+        android:id="@+id/view2"
+        style="@style/Divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_btnChange" />
+
+    <TextView
+        android:id="@+id/profile_lblCurrentPoints"
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/current_points"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/profile_txtCurrentPoints"
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/profile_lblCurrentPoints"
+        app:layout_constraintTop_toTopOf="@+id/profile_lblCurrentPoints"
+        tools:text="600 pt" />
+
+    <TextView
+        android:id="@+id/profile_lblTotalPoints"
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/total_points"
+        app:layout_constraintEnd_toEndOf="@+id/profile_lblCurrentPoints"
+        app:layout_constraintStart_toStartOf="@+id/profile_lblCurrentPoints"
+        app:layout_constraintTop_toBottomOf="@+id/profile_lblCurrentPoints" />
+
+    <TextView
+        android:id="@+id/profile_txtTotalPoints"
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/profile_lblTotalPoints"
+        app:layout_constraintTop_toTopOf="@+id/profile_lblTotalPoints"
+        tools:text="800 pt" />
+
+    <TextView
+        android:id="@+id/profile_lblUsedPoints"
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/used_points"
+        app:layout_constraintEnd_toEndOf="@+id/profile_lblCurrentPoints"
+        app:layout_constraintStart_toStartOf="@+id/profile_lblTotalPoints"
+        app:layout_constraintTop_toBottomOf="@+id/profile_lblTotalPoints" />
+
+    <TextView
+        android:id="@+id/profile_txtUsedPoints"
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/profile_lblUsedPoints"
+        app:layout_constraintTop_toTopOf="@+id/profile_lblUsedPoints"
+        tools:text="200 pt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

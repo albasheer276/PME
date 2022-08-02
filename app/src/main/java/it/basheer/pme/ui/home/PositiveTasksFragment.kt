@@ -46,6 +46,16 @@ class PositiveTasksFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         loadData()
+
+        mBinding.positiveTasksBtnAdd.setOnClickListener {
+            CreatePositiveTaskDialogFragment.newInstance() { task ->
+                taskViewModel.createTask(task).observe(viewLifecycleOwner) {
+                    Toast.makeText(context, getString(R.string.create_task_success), Toast.LENGTH_SHORT).show()
+                    hideKeyboard()
+                    loadData()
+                }
+            }.show(parentFragmentManager, CreatePositiveTaskDialogFragment.TAG)
+        }
     }
 
     private fun setupRecyclerView() {

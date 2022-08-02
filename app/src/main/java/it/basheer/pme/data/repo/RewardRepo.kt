@@ -2,7 +2,7 @@ package it.basheer.pme.data.repo
 
 import it.basheer.pme.data.AppDatabase
 import it.basheer.pme.data.model.Reward
-import it.basheer.pme.data.model.Task
+import it.basheer.pme.data.model.RewardLog
 import javax.inject.Inject
 
 class RewardRepo @Inject constructor(appDatabase: AppDatabase) {
@@ -18,6 +18,10 @@ class RewardRepo @Inject constructor(appDatabase: AppDatabase) {
 
     suspend fun getReward(userId: Long): List<Reward> {
         return rewardRepo.getRewards(userId)
+    }
+
+    suspend fun createRewardLog(rewardLog: RewardLog) {
+        return rewardRepo.createRewardLog(rewardLog)
     }
 
 }

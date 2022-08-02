@@ -59,7 +59,8 @@ class CreateProfileFragment : Fragment() {
         }
         val user = User(
             name = name.toString(),
-            is_child = false
+            is_child = false,
+            is_selected = true
         )
         userViewModel.createUser(user).observe(viewLifecycleOwner) { id ->
             BaseApp.getInstance().setUser(user.copy(id = id))

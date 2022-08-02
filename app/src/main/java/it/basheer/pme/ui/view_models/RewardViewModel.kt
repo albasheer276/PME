@@ -5,9 +5,8 @@ import androidx.lifecycle.liveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import it.basheer.pme.base.BaseViewModel
 import it.basheer.pme.data.model.Reward
-import it.basheer.pme.data.model.Task
+import it.basheer.pme.data.model.RewardLog
 import it.basheer.pme.data.repo.RewardRepo
-import it.basheer.pme.data.repo.TaskRepo
 import javax.inject.Inject
 
 @HiltViewModel
@@ -25,5 +24,9 @@ class RewardViewModel @Inject constructor(
 
     fun getRewards(userId: Long) = liveData {
         emit(rewardRepo.getReward(userId))
+    }
+
+    fun createRewardLog(rewardLog: RewardLog) = liveData {
+        emit(rewardRepo.createRewardLog(rewardLog))
     }
 }

@@ -17,4 +17,7 @@ interface UserDao {
 
     @Query("SELECT * FROM user where is_child = 0")
     suspend fun getParentUser(): User
+
+    @Query("SELECT sum(points) FROM rewards_log where user_id = :id")
+    suspend fun getUserUsedPoints(id: Long): Int
 }

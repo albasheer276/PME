@@ -28,4 +28,8 @@ class UserViewModel @Inject constructor(
     fun getParentUser() = liveData {
         emit(userRepo.getParentUser())
     }
+
+    fun getUserUsedPoints(id: Long) = liveData {
+        emit(userRepo.getUserUsedPoints(id))
+    }
 }

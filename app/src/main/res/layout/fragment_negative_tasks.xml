@@ -30,4 +30,17 @@
         app:layout_progress="@layout/loading_layout"
         app:scrollbars="none" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/negativeTasks_btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_task"
+        android:focusable="true"
+        android:src="@drawable/ic_baseline_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

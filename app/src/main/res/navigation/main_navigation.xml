@@ -11,15 +11,15 @@
         android:label="@string/pme"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/childrenFragment"
-        android:name="it.basheer.pme.ui.children.ChildrenFragment"
-        android:label="@string/menu_children"
-        tools:layout="@layout/fragment_children" />
+        android:id="@+id/membersFragment"
+        android:name="it.basheer.pme.ui.members.MembersFragment"
+        android:label="@string/menu_members"
+        tools:layout="@layout/fragment_members" />
     <fragment
         android:id="@+id/rewardFragment"
-        android:name="it.basheer.pme.ui.reward.RewardFragment"
+        android:name="it.basheer.pme.ui.reward.RewardsFragment"
         android:label="@string/menu_rewards"
-        tools:layout="@layout/fragment_reward" />
+        tools:layout="@layout/fragment_rewards" />
     <fragment
         android:id="@+id/pinFragment"
         android:name="it.basheer.pme.ui.pin.PinFragment"

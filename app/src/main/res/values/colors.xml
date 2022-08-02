@@ -74,6 +74,8 @@
 
     <color name="md_theme_tertiary95">#F9EDFF</color>
 
+    <color name="md_theme_neutral80">#C6C6C9</color>
+
     <color name="md_theme_light_surface1">#EFF4FA</color>
     <color name="md_theme_light_surface2">#E8F0F7</color>
     <color name="md_theme_light_surface5">#D8E6F1</color>

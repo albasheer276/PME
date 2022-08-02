@@ -64,7 +64,7 @@ class MainFragment : Fragment() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.homeFragment, R.id.rewardFragment, R.id.profileFragment, R.id.childrenFragment, R.id.pinFragment
+                R.id.homeFragment, R.id.rewardFragment, R.id.profileFragment, R.id.membersFragment, R.id.pinFragment
             ), drawerLayout
         )
 

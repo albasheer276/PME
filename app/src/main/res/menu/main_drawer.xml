@@ -17,9 +17,9 @@
             android:icon="@drawable/ic_baseline_person"
             android:title="@string/menu_profile" />
         <item
-            android:id="@+id/childrenFragment"
+            android:id="@+id/membersFragment"
             android:icon="@drawable/ic_baseline_people"
-            android:title="@string/menu_children" />
+            android:title="@string/menu_members" />
         <item
             android:id="@+id/pinFragment"
             android:icon="@drawable/ic_baseline_lock"

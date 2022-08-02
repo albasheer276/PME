@@ -28,7 +28,7 @@
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="elevationOverlayColor">@color/md_theme_light_surfaceTint</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
-        <item name="fontFamily">@font/reem_kufi_font</item>
+        <item name="fontFamily">@font/tajawal_font</item>
         <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
     </style>
 
@@ -41,14 +41,14 @@
     <!-- TOOLBAR THEME -->
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <!-- Color of the title text in the Toolbar -->
-        <item name="android:textColorPrimary">@color/md_theme_light_onPrimaryContainer</item>
-        <item name="android:background">@color/md_theme_light_primaryContainer</item>
-        <item name="navigationIconTint">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="android:textColorPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="android:background">@color/md_theme_light_primary</item>
+        <item name="navigationIconTint">@color/md_theme_light_onPrimary</item>
     </style>
 
     <!-- TOOLBAR TITLE THEME -->
-    <style name="TitleText" parent="@style/TextAppearance.Material3.TitleMedium">
-        <item name="android:textColor">@color/md_theme_light_onPrimaryContainer</item>
+    <style name="TitleText" parent="@style/TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/md_theme_light_onPrimary</item>
     </style>
 
 
@@ -137,24 +137,24 @@
     </style>
 
     <style name="BaseButton.PrimaryButton" parent="BaseButton">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="backgroundTint">@color/md_theme_light_primary</item>
         <item name="android:textColor">@color/md_theme_light_onPrimary</item>
     </style>
 
     <style name="BaseButton.SecondaryButton" parent="BaseButton">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="backgroundTint">@color/md_theme_light_surfaceVariant</item>
         <item name="android:textColor">@color/md_theme_light_onSurface</item>
     </style>
 
     <style name="TextButton.Primary" parent="TextButton">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/md_theme_light_primary</item>
     </style>
 
     <style name="TextButton.Secondary" parent="TextButton">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/md_theme_light_secondary</item>
     </style>
 

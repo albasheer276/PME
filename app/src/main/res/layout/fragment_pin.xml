@@ -1,14 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.pin.PinFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="pin" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pin_guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/pin_imgIcon"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:orientation="vertical"
+        android:src="@drawable/ic_main_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pin_guide1" />
+
+    <TextView
+        android:id="@+id/pin_lblTitle"
+        style="@style/DisplayMedium.InverseSurface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/pme"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/pin_imgIcon"
+        app:layout_constraintStart_toStartOf="@+id/pin_imgIcon"
+        app:layout_constraintTop_toBottomOf="@+id/pin_imgIcon" />
+
+    <TextView
+        android:id="@+id/pin_lblSubTitle1"
+        style="@style/TitleMedium.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/checkPin_otp_view"
+        android:text="@string/enter_current_pin"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/pin_otp_view1"
+        app:layout_constraintTop_toBottomOf="@+id/pin_lblTitle" />
+
+    <com.mukesh.OtpView
+        android:id="@+id/pin_otp_view1"
+        style="@style/PinStyle.OnBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cursorVisible="true"
+        android:focusable="true"
+        android:hint="@string/pin_code"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:OtpItemCount="4"
+        app:OtpItemHeight="64dp"
+        app:OtpItemRadius="8dp"
+        app:OtpItemSpacing="16dp"
+        app:OtpItemWidth="48dp"
+        app:OtpLineColor="@color/md_theme_light_onBackground"
+        app:OtpMaskingChar="*"
+        app:OtpViewType="rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pin_lblSubTitle1"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/pin_lblSubTitle2"
+        style="@style/TitleMedium.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:labelFor="@id/createPin_otp_view"
+        android:text="@string/enter_new_pin"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/pin_otp_view2"
+        app:layout_constraintTop_toBottomOf="@+id/pin_otp_view1" />
+
+    <com.mukesh.OtpView
+        android:id="@+id/pin_otp_view2"
+        style="@style/PinStyle.OnBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:cursorVisible="true"
+        android:focusable="true"
+        android:hint="@string/pin_code"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:OtpItemCount="4"
+        app:OtpItemHeight="64dp"
+        app:OtpItemRadius="8dp"
+        app:OtpItemSpacing="16dp"
+        app:OtpItemWidth="48dp"
+        app:OtpLineColor="@color/md_theme_light_onBackground"
+        app:OtpViewType="rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pin_lblSubTitle2"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/pin_lblDescription"
+        style="@style/LabelMedium.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/pin_used_the_app"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pin_otp_view2" />
+
+    <TextView
+        android:id="@+id/pin_lblForgot"
+        style="@style/LabelMedium.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        android:text="@string/forgot_pin_code"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pin_lblDescription" />
+
+    <Button
+        android:id="@+id/pin_btnChangePin"
+        style="@style/BaseButton.PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/change_pin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pin_lblForgot" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
