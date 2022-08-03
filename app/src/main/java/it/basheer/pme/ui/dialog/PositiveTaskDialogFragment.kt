@@ -11,25 +11,48 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import it.basheer.pme.R
 import it.basheer.pme.base.BaseApp
 import it.basheer.pme.data.model.ActiveTask
 import it.basheer.pme.data.model.Reward
 import it.basheer.pme.data.model.Task
+import it.basheer.pme.data.model.TaskLog
 import it.basheer.pme.databinding.FragmentCreateRewardDialogBinding
 import it.basheer.pme.databinding.FragmentPositiveDialogBinding
+import it.basheer.pme.ui.adapter.PositiveTaskAdapter
+import it.basheer.pme.ui.adapter.ProgressAdapter
+import it.basheer.pme.util.POSITIVE_TASKS_TYPE
+import it.basheer.pme.util.getStartWeekDay
+import it.basheer.pme.util.hideKeyboard
+import okhttp3.internal.notifyAll
+import java.text.SimpleDateFormat
+import java.util.*
 
-class PositiveTaskDialogFragment(private val task: ActiveTask, private val onClickListener: () -> Unit) : DialogFragment() {
+class PositiveTaskDialogFragment(
+    private val task: ActiveTask,
+    private val taskLogs: List<TaskLog>,
+    private val onClickListener: () -> Unit,
+    private val onDeleteTaskLog: (taskLog: TaskLog) -> Unit
+) :
+    DialogFragment() {
 
     private lateinit var mBinding: FragmentPositiveDialogBinding
+
+    private lateinit var mProgressAdapter: ProgressAdapter
 
     /**
      * create a new instance of the dialog
      */
     companion object {
         const val TAG = "CreateRewardDialogFragment_PME"
-        fun newInstance(task: ActiveTask, onClickListener: () -> Unit): PositiveTaskDialogFragment {
-            return PositiveTaskDialogFragment(task, onClickListener)
+        fun newInstance(
+            task: ActiveTask,
+            taskLogs: List<TaskLog>,
+            onClickListener: () -> Unit,
+            onDeleteTaskLog: (taskLog: TaskLog) -> Unit
+        ): PositiveTaskDialogFragment {
+            return PositiveTaskDialogFragment(task, taskLogs, onClickListener, onDeleteTaskLog)
         }
     }
 
@@ -83,13 +106,39 @@ class PositiveTaskDialogFragment(private val task: ActiveTask, private val onCli
             }
         }
 
+        setupRecyclerView()
+        loadData()
+
         mBinding.positiveTaskBtnCancel.setOnClickListener {
+            hideKeyboard()
             this.dismiss()
         }
 
         mBinding.positiveTaskBtnSave.setOnClickListener {
             onClickListener.invoke()
+            hideKeyboard()
             this.dismiss()
+        }
+    }
+
+    private fun setupRecyclerView() {
+        mBinding.positiveTaskRvProgress.apply {
+            setLayoutManager(LinearLayoutManager(context))
+            mProgressAdapter = ProgressAdapter(requireContext()) { taskLog ->
+                onDeleteTaskLog(taskLog)
+                mProgressAdapter.remove(taskLog)
+                if (mProgressAdapter.count == 0) {
+                    mBinding.positiveTaskRvProgress.showEmpty()
+                }
+            }
+            adapter = mProgressAdapter
+        }
+    }
+
+    private fun loadData() {
+        mProgressAdapter.addAll(taskLogs)
+        if (taskLogs.isEmpty()) {
+            mBinding.positiveTaskRvProgress.showEmpty()
         }
     }
 }

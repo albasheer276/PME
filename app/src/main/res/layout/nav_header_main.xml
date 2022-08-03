@@ -27,6 +27,7 @@
         android:background="@drawable/ic_star"
         android:gravity="center"
         android:textAlignment="center"
+        android:textDirection="ltr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="625" />
@@ -50,10 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
+        android:text="@string/current_points"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navHeader_txtProfileName"
-        android:text="@string/current_points" />
+        app:layout_constraintTop_toBottomOf="@+id/navHeader_txtProfileName" />
 
     <TextView
         android:id="@+id/navHeader_txtProfilePoints"
@@ -63,10 +64,22 @@
         android:layout_marginStart="8dp"
         android:gravity="center"
         android:textAlignment="center"
+        android:textDirection="ltr"
         app:layout_constraintBottom_toBottomOf="@+id/navHeader_lblProfilePoints"
         app:layout_constraintStart_toEndOf="@+id/navHeader_lblProfilePoints"
         app:layout_constraintTop_toTopOf="@+id/navHeader_lblProfilePoints"
-        tools:text="625 pt" />
+        tools:text="625" />
+
+    <TextView
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/pt"
+        android:textDirection="ltr"
+        app:layout_constraintBottom_toBottomOf="@+id/navHeader_txtProfilePoints"
+        app:layout_constraintStart_toEndOf="@+id/navHeader_txtProfilePoints"
+        app:layout_constraintTop_toTopOf="@+id/navHeader_txtProfilePoints" />
 
     <View
         style="@style/Divider"

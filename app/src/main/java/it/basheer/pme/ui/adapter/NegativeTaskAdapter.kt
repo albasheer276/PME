@@ -61,7 +61,7 @@ class NegativeTaskAdapter(private val mContext: Context, private val onClickList
                     taskItemTxtTaskDuration.text = ""
                 }
 
-                taskItemLayout.setOnClickListener {
+                root.setOnClickListener {
                     onClickListener(data)
                 }
             }

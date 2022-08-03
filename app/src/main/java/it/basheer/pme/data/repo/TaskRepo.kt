@@ -25,8 +25,16 @@ class TaskRepo @Inject constructor(appDatabase: AppDatabase) {
         return taskDao.getActiveTasks(type, userId, date, startWeek, startMonth)
     }
 
+    suspend fun getCurrentProgress(taskId: Long, period: String, date: String, startWeek: String, startMonth: String): List<TaskLog> {
+        return taskDao.getCurrentProgress(taskId, period, date, startWeek, startMonth)
+    }
+
     suspend fun createTaskLog(taskLog: TaskLog) {
         return taskDao.createTaskLog(taskLog)
+    }
+
+    suspend fun deleteTaskLog(taskLog: TaskLog) {
+        return taskDao.deleteTaskLog(taskLog)
     }
 
 }

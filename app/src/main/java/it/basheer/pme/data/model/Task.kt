@@ -15,4 +15,5 @@ data class Task(
     val points: Int,
     val type: Int,
     val user_id: Long,
+    var is_deleted: Boolean = false
 )

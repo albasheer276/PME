@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
 import it.basheer.pme.base.BaseApp
-import it.basheer.pme.data.model.User
 import it.basheer.pme.databinding.FragmentProfileBinding
 import it.basheer.pme.ui.view_models.UserViewModel
 import it.basheer.pme.util.hideKeyboard
@@ -38,11 +36,11 @@ class ProfileFragment : Fragment() {
 
         mBinding.apply {
             profileTxtName.editText?.setText(user?.name)
-            profileTxtCurrentPoints.text = "${user?.points.toString()} ${getString(R.string.pt)}"
+            profileTxtCurrentPoints.text = user?.points.toString()
 
             userViewModel.getUserUsedPoints(user?.id!!).observe(viewLifecycleOwner) { usedPoints ->
-                profileTxtUsedPoints.text = "$usedPoints ${getString(R.string.pt)}"
-                profileTxtTotalPoints.text = "${usedPoints + user.points} ${getString(R.string.pt)}"
+                profileTxtUsedPoints.text = usedPoints.toString()
+                profileTxtTotalPoints.text = (usedPoints + user.points).toString()
             }
         }
 

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_bordered_bg_secondary95"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:id="@+id/memberItem_txtName"
+            style="@style/TitleMedium.OnSurfaceVariant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textAlignment="viewStart"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/memberItem_txtPoints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Read 10 pages from Book" />
+
+        <TextView
+            android:id="@+id/memberItem_txtPoints"
+            style="@style/TitleMedium.OnSurfaceVariant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textDirection="ltr"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/memberItem_lblPoints"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="30" />
+
+        <TextView
+            android:id="@+id/memberItem_lblPoints"
+            style="@style/TitleMedium.OnSurfaceVariant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pt"
+            android:textDirection="ltr"
+            app:layout_constraintBottom_toBottomOf="@+id/memberItem_txtPoints"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/memberItem_txtPoints" />
+
+        <Button
+            android:id="@+id/memberItem_btnDelete"
+            style="@style/TextButton.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/delete"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/memberItem_txtName" />
+
+        <Button
+            android:id="@+id/memberItem_btnChoose"
+            style="@style/TextButton.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/make_default"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/memberItem_txtName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

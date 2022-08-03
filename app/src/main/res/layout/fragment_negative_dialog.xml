@@ -88,16 +88,14 @@
     <com.jude.easyrecyclerview.EasyRecyclerView
         android:id="@+id/negativeTask_rvProgress"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
         android:layout_marginTop="16dp"
-        android:maxHeight="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/negativeTask_lblCurrentProgress"
         app:layout_empty="@layout/empty_data_layout"
         app:layout_progress="@layout/loading_layout"
-        app:scrollbars="none"
-        tools:layout_height="200dp" />
+        app:scrollbars="none" />
 
     <Button
         android:id="@+id/negativeTask_btnSave"

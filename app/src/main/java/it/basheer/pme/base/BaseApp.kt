@@ -3,7 +3,6 @@ package it.basheer.pme.base
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.google.gson.Gson
 import dagger.hilt.android.HiltAndroidApp
 import it.basheer.pme.data.model.User
 
@@ -17,7 +16,6 @@ class BaseApp : Application() {
     fun setUser(user: User) {
         this.user.postValue(user)
     }
-
 
     override fun onCreate() {
         super.onCreate()

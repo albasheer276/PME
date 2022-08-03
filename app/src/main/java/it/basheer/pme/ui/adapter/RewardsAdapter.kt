@@ -10,11 +10,7 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 import it.basheer.pme.R
 import it.basheer.pme.base.BaseApp
-import it.basheer.pme.data.model.ActiveTask
 import it.basheer.pme.data.model.Reward
-import it.basheer.pme.data.model.Task
-import it.basheer.pme.databinding.LayoutFirstPositiveTaskItemBinding
-import it.basheer.pme.databinding.LayoutFirstRewardItemBinding
 import it.basheer.pme.databinding.LayoutRewardItemBinding
 
 class RewardsAdapter(private val mContext: Context, private val onClickListener: (reward: Reward) -> Unit) : RecyclerArrayAdapter<Reward>(mContext) {
@@ -34,8 +30,8 @@ class RewardsAdapter(private val mContext: Context, private val onClickListener:
         @SuppressLint("LongLogTag", "SetTextI18n")
         override fun setData(data: Reward) {
             binding.apply {
-                taskItemTxtTaskName.text = data.name
-                taskItemTxtTaskPoints.text = "${data.points} ${mContext.resources.getString(R.string.pt)}"
+                rewardItemTxtTaskName.text = data.name
+                rewardItemTxtTaskPoints.text = "${data.points} ${mContext.resources.getString(R.string.pt)}"
 
 
                 if (BaseApp.getInstance().getUser().value?.points!! >= data.points) {
@@ -48,10 +44,6 @@ class RewardsAdapter(private val mContext: Context, private val onClickListener:
                             rewardItemLayout.background = mContext.resources.getDrawable(R.drawable.card_bordered_bg_tertiary95, mContext.theme)
                         }
                     }
-
-                    rewardItemLayout.setOnClickListener {
-                        onClickListener(data)
-                    }
                 } else {
 
                     when (mContext.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)) {
@@ -62,12 +54,11 @@ class RewardsAdapter(private val mContext: Context, private val onClickListener:
                             rewardItemLayout.background = mContext.resources.getDrawable(R.drawable.card_bordered_bg_neutral80, mContext.theme)
                         }
                     }
-
-                    rewardItemLayout.setOnClickListener {
-                        Toast.makeText(mContext, mContext.getString(R.string.not_enough_points), Toast.LENGTH_SHORT).show()
-                    }
                 }
 
+                root.setOnClickListener {
+                    onClickListener(data)
+                }
 
             }
         }

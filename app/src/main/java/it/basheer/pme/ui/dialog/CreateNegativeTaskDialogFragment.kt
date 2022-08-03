@@ -18,8 +18,8 @@ import it.basheer.pme.R
 import it.basheer.pme.base.BaseApp
 import it.basheer.pme.data.model.Task
 import it.basheer.pme.databinding.FragmentCreateNegativeTaskDialogBinding
-import it.basheer.pme.util.NEGATIVE_PERIODS
-import it.basheer.pme.util.NEGATIVE_TASKS_TYPE
+import it.basheer.pme.util.*
+import java.util.*
 
 class CreateNegativeTaskDialogFragment(private val onClickListener: (task: Task) -> Unit) : DialogFragment() {
 
@@ -65,24 +65,26 @@ class CreateNegativeTaskDialogFragment(private val onClickListener: (task: Task)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val adapter = ArrayAdapter(requireContext(), R.layout.layout_text_view_item, NEGATIVE_PERIODS)
+        var list = NEGATIVE_PERIODS_EN
+        if (Locale.getDefault().language == "ar") {
+            list = NEGATIVE_PERIODS_AR
+        }
+        val adapter = ArrayAdapter(requireContext(), R.layout.layout_text_view_item, list)
         (mBinding.createNegativeTaskTxtTaskPeriod.editText as AutoCompleteTextView).setAdapter(adapter)
 
         setOnTextChangeListener()
 
         mBinding.createNegativeTaskBtnCancel.setOnClickListener {
+            hideKeyboard()
             this.dismiss()
         }
 
         (mBinding.createNegativeTaskTxtTaskPeriod.editText as AutoCompleteTextView).setOnItemClickListener { adapterView, _, i, _ ->
-            isTimingTask = (adapterView[i] as TextView).text == NEGATIVE_PERIODS[1]
+            isTimingTask = (adapterView[i] as TextView).text == list[1]
             if (isTimingTask) {
                 mBinding.createNegativeTaskTxtTaskDuration.visibility = View.VISIBLE
-                mBinding.createNegativeTaskTxtTaskCount.visibility = View.GONE
             } else {
                 mBinding.createNegativeTaskTxtTaskDuration.visibility = View.GONE
-                mBinding.createNegativeTaskTxtTaskCount.visibility = View.VISIBLE
             }
         }
 
@@ -90,8 +92,7 @@ class CreateNegativeTaskDialogFragment(private val onClickListener: (task: Task)
             var isValid = true
 
             val name = mBinding.createNegativeTaskTxtTaskName.editText?.text.toString()
-            val period = (mBinding.createNegativeTaskTxtTaskPeriod.editText as AutoCompleteTextView).text.toString()
-            val count = mBinding.createNegativeTaskTxtTaskCount.editText?.text.toString()
+            var period = (mBinding.createNegativeTaskTxtTaskPeriod.editText as AutoCompleteTextView).text.toString()
             val duration = mBinding.createNegativeTaskTxtTaskDuration.editText?.text.toString()
             val points = mBinding.createNegativeTaskTxtTaskPoints.editText?.text.toString()
 
@@ -113,23 +114,21 @@ class CreateNegativeTaskDialogFragment(private val onClickListener: (task: Task)
                 mBinding.createNegativeTaskTxtTaskDuration.error = getString(R.string.required_field)
             }
 
-            if (count.isEmpty() && !isTimingTask) {
-                isValid = false
-                mBinding.createNegativeTaskTxtTaskCount.isErrorEnabled = true
-                mBinding.createNegativeTaskTxtTaskCount.error = getString(R.string.required_field)
-            }
-
             if (points.isEmpty()) {
                 isValid = false
                 mBinding.createNegativeTaskTxtTaskPoints.isErrorEnabled = true
                 mBinding.createNegativeTaskTxtTaskPoints.error = getString(R.string.required_field)
             }
 
+            if (list == NEGATIVE_PERIODS_AR) {
+                period = NEGATIVE_PERIODS_EN[list.indexOf(period)]
+            }
+
             if (isValid) {
                 val task = Task(
                     name = name,
                     period = period,
-                    count = if (count.isEmpty() || isTimingTask) 0 else count.toInt(),
+                    count = 1,
                     duration = if (duration.isEmpty() || !isTimingTask) 0 else duration.toInt(),
                     points = points.toInt(),
                     type = NEGATIVE_TASKS_TYPE,
@@ -137,6 +136,7 @@ class CreateNegativeTaskDialogFragment(private val onClickListener: (task: Task)
                 )
                 onClickListener(task)
                 this.dismiss()
+                hideKeyboard()
             }
         }
     }

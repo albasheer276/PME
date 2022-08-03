@@ -71,7 +71,7 @@ class PositiveTaskAdapter(private val mContext: Context, private val onClickList
                     }
                 }
 
-                taskItemLayout.setOnClickListener {
+                root.setOnClickListener {
                     onClickListener(data)
                 }
             }

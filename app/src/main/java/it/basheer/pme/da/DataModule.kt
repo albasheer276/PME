@@ -9,6 +9,7 @@ import dagger.hilt.components.SingletonComponent
 import it.basheer.pme.data.AppDatabase
 import it.basheer.pme.data.dao.UserDao
 import it.basheer.pme.data.repo.UserRepo
+import it.basheer.pme.util.AppSharedPref
 import it.basheer.pme.util.DATABASE_NAME
 import javax.inject.Singleton
 
@@ -28,4 +29,9 @@ object DataModule {
         ).fallbackToDestructiveMigration()
             .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideAppSharedPref(application: Application): AppSharedPref =
+        AppSharedPref(application)
 }

@@ -1,6 +1,5 @@
 package it.basheer.pme.ui.main_fragment
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,15 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import it.basheer.pme.R
@@ -77,8 +73,7 @@ class MainFragment : Fragment() {
 
         BaseApp.getInstance().getUser().observe(viewLifecycleOwner) { user ->
             mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtProfileName).text = user?.name
-            mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtProfilePoints).text =
-                "${user?.points.toString()} ${requireActivity().resources.getString(R.string.pt)}"
+            mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtProfilePoints).text = user?.points.toString()
             mBinding.navView.getHeaderView(0).findViewById<TextView>(R.id.navHeader_txtPoints).text = user?.points.toString()
         }
     }

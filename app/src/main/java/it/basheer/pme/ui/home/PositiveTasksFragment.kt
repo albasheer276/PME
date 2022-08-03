@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
@@ -20,6 +19,7 @@ import it.basheer.pme.ui.dialog.PositiveTaskDialogFragment
 import it.basheer.pme.ui.view_models.TaskViewModel
 import it.basheer.pme.ui.view_models.UserViewModel
 import it.basheer.pme.util.POSITIVE_TASKS_TYPE
+import it.basheer.pme.util.getDates
 import it.basheer.pme.util.getStartWeekDay
 import it.basheer.pme.util.hideKeyboard
 import java.text.SimpleDateFormat
@@ -62,27 +62,39 @@ class PositiveTasksFragment : Fragment() {
         mBinding.positiveTasksRvTasks.apply {
             setLayoutManager(LinearLayoutManager(context))
             mPositiveTaskAdapter = PositiveTaskAdapter(requireContext()) { activeTask ->
-                PositiveTaskDialogFragment.newInstance(activeTask) {
-                    val date = Date()
-                    val currentDate = SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date)
-                    val taskLog = TaskLog(
-                        user_id = BaseApp.getInstance().getUser().value?.id!!,
-                        task_id = activeTask.id!!,
-                        points = activeTask.points,
-                        date = currentDate
-                    )
-                    taskViewModel.createTaskLog(taskLog).observe(viewLifecycleOwner) {
+                taskViewModel.getCurrentProgress(activeTask.id!!, activeTask.period, getDates()[0], getDates()[1], getDates()[2])
+                    .observe(viewLifecycleOwner) { taskLogs ->
+                        PositiveTaskDialogFragment.newInstance(activeTask, taskLogs, onClickListener = {
+                            val taskLog = TaskLog(
+                                user_id = BaseApp.getInstance().getUser().value?.id!!,
+                                task_id = activeTask.id,
+                                points = activeTask.points,
+                                date = getDates()[3]
+                            )
+                            taskViewModel.createTaskLog(taskLog).observe(viewLifecycleOwner) {
 
-                        BaseApp.getInstance().getUser().value?.let { mainUser ->
-                            mainUser.points = mainUser.points.plus(activeTask.points)
-                            BaseApp.getInstance().setUser(mainUser)
-                            userViewModel.updateUser(mainUser).observe(viewLifecycleOwner) {
-                                loadData()
+                                BaseApp.getInstance().getUser().value?.let { mainUser ->
+                                    mainUser.points = mainUser.points.plus(activeTask.points)
+                                    BaseApp.getInstance().setUser(mainUser)
+                                    userViewModel.updateUser(mainUser).observe(viewLifecycleOwner) {
+                                        loadData()
+                                    }
+                                }
                             }
-                        }
+
+                        }, onDeleteTaskLog = { taskLog ->
+                            taskViewModel.deleteTaskLog(taskLog).observe(viewLifecycleOwner) {
+                                BaseApp.getInstance().getUser().value?.let { mainUser ->
+                                    mainUser.points = mainUser.points.minus(taskLog.points)
+                                    BaseApp.getInstance().setUser(mainUser)
+                                    userViewModel.updateUser(mainUser).observe(viewLifecycleOwner) {
+                                        loadData()
+                                    }
+                                }
+                            }
+                        }).show(parentFragmentManager, PositiveTaskDialogFragment.TAG)
                     }
 
-                }.show(parentFragmentManager, PositiveTaskDialogFragment.TAG)
             }
             adapter = mPositiveTaskAdapter
 
@@ -96,11 +108,7 @@ class PositiveTasksFragment : Fragment() {
     private fun loadData() {
         mPositiveTaskAdapter.clear()
         mBinding.positiveTasksRvTasks.showProgress()
-        val date = Date()
-        val currentDate = SimpleDateFormat("yyyy-MM-dd 00:00:00").format(date)
-        val startWeekDate = SimpleDateFormat("yyyy-MM-dd 00:00:00").format(getStartWeekDay(date) ?: date)
-        val startMonthDate = SimpleDateFormat("yyyy-MM-01 00:00:00").format(date)
-        taskViewModel.getActiveTasks(POSITIVE_TASKS_TYPE, BaseApp.getInstance().getUser().value?.id!!, currentDate, startWeekDate, startMonthDate)
+        taskViewModel.getActiveTasks(POSITIVE_TASKS_TYPE, BaseApp.getInstance().getUser().value?.id!!, getDates()[0], getDates()[1], getDates()[2])
             .observe(viewLifecycleOwner) { tasks ->
                 mBinding.positiveTasksRvTasks.setRefreshing(false)
                 mPositiveTaskAdapter.addAll(tasks)

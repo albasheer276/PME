@@ -8,18 +8,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
 import it.basheer.pme.base.BaseApp
 import it.basheer.pme.databinding.FragmentCheckPinBinding
-import it.basheer.pme.ui.view_models.UserViewModel
+import it.basheer.pme.util.AppSharedPref
+import it.basheer.pme.util.PIN_CODE
 import it.basheer.pme.util.showKeyboard
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class CheckPinFragment : Fragment() {
 
     private lateinit var mBinding: FragmentCheckPinBinding
+
+    @Inject
+    lateinit var mSharedPref: AppSharedPref
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,10 +39,11 @@ class CheckPinFragment : Fragment() {
         mBinding.checkPinOtpView.requestFocus()
         showKeyboard()
 
+        val pin = mSharedPref.getString(PIN_CODE)?.toInt() ?: 0
+
         mBinding.checkPinOtpView.doOnTextChanged { text, _, _, _ ->
             if (text.toString().length == 4) {
-                val user = BaseApp.getInstance().getUser().value ?: return@doOnTextChanged
-                if (user.pin == text.toString().toInt()) {
+                if (pin == text.toString().toInt()) {
                     Handler(Looper.getMainLooper()).postDelayed({
                         mBinding.checkPinTxtError.visibility = View.INVISIBLE
                         findNavController().navigate(R.id.action_checkPinFragment_to_mainFragment)

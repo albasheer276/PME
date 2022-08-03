@@ -19,17 +19,18 @@
         android:paddingVertical="24dp">
 
         <TextView
-            android:id="@+id/taskItem_txtTaskName"
+            android:id="@+id/rewardItem_txtTaskName"
             style="@style/LabelLarge.OnSecondaryContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/taskItem_txtTaskPoints"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toStartOf="@+id/rewardItem_txtTaskPoints"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Read 10 pages from Book" />
 
         <TextView
-            android:id="@+id/taskItem_txtTaskPoints"
+            android:id="@+id/rewardItem_txtTaskPoints"
             style="@style/LabelLarge.OnSecondaryContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

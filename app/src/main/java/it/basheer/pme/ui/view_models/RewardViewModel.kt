@@ -29,4 +29,8 @@ class RewardViewModel @Inject constructor(
     fun createRewardLog(rewardLog: RewardLog) = liveData {
         emit(rewardRepo.createRewardLog(rewardLog))
     }
+
+    fun getLastProgress(id: Long) = liveData {
+        emit(rewardRepo.getLastProgress(id))
+    }
 }

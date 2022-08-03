@@ -2,11 +2,14 @@ package it.basheer.pme.ui.view_models
 
 import android.app.Application
 import androidx.lifecycle.liveData
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import it.basheer.pme.base.BaseViewModel
 import it.basheer.pme.data.model.Task
 import it.basheer.pme.data.model.TaskLog
 import it.basheer.pme.data.repo.TaskRepo
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -34,7 +37,15 @@ class TaskViewModel @Inject constructor(
         emit(tasks)
     }
 
+    fun getCurrentProgress(taskId: Long, period: String, date: String, startWeek: String, startMonth: String) = liveData {
+        emit(taskRepo.getCurrentProgress(taskId, period, date, startWeek, startMonth))
+    }
+
     fun createTaskLog(taskLog: TaskLog) = liveData {
         emit(taskRepo.createTaskLog(taskLog))
+    }
+
+    fun deleteTaskLog(taskLog: TaskLog)= liveData {
+           emit(taskRepo.deleteTaskLog(taskLog))
     }
 }

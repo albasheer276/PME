@@ -18,15 +18,12 @@ import it.basheer.pme.R
 import it.basheer.pme.base.BaseApp
 import it.basheer.pme.data.model.Task
 import it.basheer.pme.databinding.FragmentCreatePositiveTaskDialogBinding
-import it.basheer.pme.util.NEGATIVE_PERIODS
-import it.basheer.pme.util.POSITIVE_PERIODS
-import it.basheer.pme.util.POSITIVE_TASKS_TYPE
+import it.basheer.pme.util.*
+import java.util.*
 
 class CreatePositiveTaskDialogFragment(private val onClickListener: (task: Task) -> Unit) : DialogFragment() {
 
     private lateinit var mBinding: FragmentCreatePositiveTaskDialogBinding
-
-    private var isTimingTask = false;
 
     /**
      * create a new instance of the dialog
@@ -66,8 +63,11 @@ class CreatePositiveTaskDialogFragment(private val onClickListener: (task: Task)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val adapter = ArrayAdapter(requireContext(), R.layout.layout_text_view_item, POSITIVE_PERIODS)
+        var list = POSITIVE_PERIODS_EN
+        if (Locale.getDefault().language == "ar") {
+            list = POSITIVE_PERIODS_AR
+        }
+        val adapter = ArrayAdapter(requireContext(), R.layout.layout_text_view_item, list)
         (mBinding.createPositiveTaskTxtTaskPeriod.editText as AutoCompleteTextView).setAdapter(adapter)
 
         setOnTextChangeListener()
@@ -76,16 +76,11 @@ class CreatePositiveTaskDialogFragment(private val onClickListener: (task: Task)
             this.dismiss()
         }
 
-        (mBinding.createPositiveTaskTxtTaskPeriod.editText as AutoCompleteTextView).setOnItemClickListener { adapterView, _, i, _ ->
-            if ((adapterView[i] as TextView).text == NEGATIVE_PERIODS[1])
-                isTimingTask = true
-        }
-
         mBinding.createPositiveTaskBtnSave.setOnClickListener {
             var isValid = true
 
             val name = mBinding.createPositiveTaskTxtTaskName.editText?.text.toString()
-            val period = (mBinding.createPositiveTaskTxtTaskPeriod.editText as AutoCompleteTextView).text.toString()
+            var period = (mBinding.createPositiveTaskTxtTaskPeriod.editText as AutoCompleteTextView).text.toString()
             val count = mBinding.createPositiveTaskTxtTaskCount.editText?.text.toString()
             val duration = mBinding.createPositiveTaskTxtTaskDuration.editText?.text.toString()
             val points = mBinding.createPositiveTaskTxtTaskPoints.editText?.text.toString()
@@ -114,6 +109,10 @@ class CreatePositiveTaskDialogFragment(private val onClickListener: (task: Task)
                 mBinding.createPositiveTaskTxtTaskPoints.error = getString(R.string.required_field)
             }
 
+            if (list == POSITIVE_PERIODS_AR) {
+                period = POSITIVE_PERIODS_EN[list.indexOf(period)]
+            }
+
             if (isValid) {
                 val task = Task(
                     name = name,
@@ -126,6 +125,7 @@ class CreatePositiveTaskDialogFragment(private val onClickListener: (task: Task)
                 )
                 onClickListener(task)
                 this.dismiss()
+                hideKeyboard()
             }
         }
     }

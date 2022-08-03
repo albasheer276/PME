@@ -1,9 +1,6 @@
 package it.basheer.pme.data.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import it.basheer.pme.data.model.ActiveTask
 import it.basheer.pme.data.model.Task
 import it.basheer.pme.data.model.TaskLog
@@ -44,6 +41,18 @@ interface TaskDao {
     )
     suspend fun getActiveTasks(type: Int, userId: Long, date: String, startWeek: String, startMonth: String): List<ActiveTask>
 
+    @Query(
+        "SELECT * FROM tasks_log where task_id = :taskId and " +
+                "((:period = 'Weekly' and Datetime(date) >= Datetime(:startWeek)) or " +
+                "(:period = 'Monthly' and Datetime(date) >= Datetime(:startMonth)) or " +
+                "(Datetime(date) >= Datetime(:date)))" +
+                " order by Datetime(date) desc"
+    )
+    suspend fun getCurrentProgress(taskId: Long, period: String, date: String, startWeek: String, startMonth: String): List<TaskLog>
+
     @Insert
     suspend fun createTaskLog(taskLog: TaskLog)
+
+    @Delete
+    suspend fun deleteTaskLog(taskLog: TaskLog)
 }

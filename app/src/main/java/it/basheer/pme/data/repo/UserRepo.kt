@@ -15,11 +15,15 @@ class UserRepo @Inject constructor(appDatabase: AppDatabase) {
         return userDao.updateUser(user)
     }
 
-    suspend fun getParentUser(): User {
-        return userDao.getParentUser()
+    suspend fun getSelectedUser(): User {
+        return userDao.getSelectedUser()
     }
 
     suspend fun getUserUsedPoints(id: Long): Int {
         return userDao.getUserUsedPoints(id)
+    }
+
+    suspend fun getAllUsers(): List<User> {
+        return userDao.getAllUsers()
     }
 }

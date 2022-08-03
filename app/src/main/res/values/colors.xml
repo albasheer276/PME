@@ -67,6 +67,7 @@
     <color name="md_theme_secondary0">#000000</color>
     <color name="md_theme_secondary10">#0E1D2A</color>
     <color name="md_theme_secondary95">#E8F2FF</color>
+    <color name="md_theme_secondary70">#9EADBE</color>
 
     <color name="md_theme_error99">#FFFBFF</color>
     <color name="md_theme_error95">#FFEDEA</color>

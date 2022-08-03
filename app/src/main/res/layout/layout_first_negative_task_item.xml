@@ -20,6 +20,7 @@
             android:id="@+id/taskItem_txtTaskName"
             style="@style/LabelLarge.OnSecondaryContainer"
             android:layout_width="0dp"
+            android:textAlignment="viewStart"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/taskItem_txtTaskPoints"
             app:layout_constraintStart_toStartOf="parent"

@@ -10,4 +10,5 @@ data class Reward(
     val name: String,
     val points: Int,
     val user_id: Long,
+    var is_deleted: Boolean = false
 )

@@ -9,21 +9,29 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import androidx.fragment.app.DialogFragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import it.basheer.pme.R
 import it.basheer.pme.data.model.Reward
+import it.basheer.pme.data.model.RewardLog
 import it.basheer.pme.databinding.FragmentRewardDialogBinding
+import it.basheer.pme.ui.adapter.ProgressAdapter
+import it.basheer.pme.ui.adapter.RewardLogAdapter
+import it.basheer.pme.util.hideKeyboard
 
-class RewardDialogFragment(private val reward: Reward, private val onClickListener: () -> Unit) : DialogFragment() {
+class RewardDialogFragment(private val reward: Reward, private val rewardLog: List<RewardLog>, private val onClickListener: () -> Unit) :
+    DialogFragment() {
 
     private lateinit var mBinding: FragmentRewardDialogBinding
+
+    private lateinit var mRewardLogAdapter: RewardLogAdapter
 
     /**
      * create a new instance of the dialog
      */
     companion object {
         const val TAG = "CreateRewardDialogFragment_PME"
-        fun newInstance(reward: Reward, onClickListener: () -> Unit): RewardDialogFragment {
-            return RewardDialogFragment(reward, onClickListener)
+        fun newInstance(reward: Reward, rewardLog: List<RewardLog>, onClickListener: () -> Unit): RewardDialogFragment {
+            return RewardDialogFragment(reward, rewardLog, onClickListener)
         }
     }
 
@@ -61,13 +69,33 @@ class RewardDialogFragment(private val reward: Reward, private val onClickListen
             rewardTxtPoints.text = "${reward.points} ${getString(R.string.pt)}"
         }
 
+        setupRecyclerView()
+        loadData()
+
         mBinding.rewardBtnCancel.setOnClickListener {
+            hideKeyboard()
             this.dismiss()
         }
 
         mBinding.rewardBtnSave.setOnClickListener {
             onClickListener.invoke()
+            hideKeyboard()
             this.dismiss()
+        }
+    }
+
+    private fun setupRecyclerView() {
+        mBinding.rewardRvHistory.apply {
+            setLayoutManager(LinearLayoutManager(context))
+            mRewardLogAdapter = RewardLogAdapter(requireContext())
+            adapter = mRewardLogAdapter
+        }
+    }
+
+    private fun loadData() {
+        mRewardLogAdapter.addAll(rewardLog)
+        if (rewardLog.isEmpty()) {
+            mBinding.rewardRvHistory.showEmpty()
         }
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.profile.ProfileFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -63,8 +63,8 @@
         style="@style/BaseButton.PrimaryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:text="@string/change_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_txtName" />
@@ -82,7 +82,7 @@
     <TextView
         android:id="@+id/profile_lblCurrentPoints"
         style="@style/TitleMedium.OnSurfaceVariant"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
@@ -96,9 +96,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textDirection="ltr"
         app:layout_constraintStart_toEndOf="@+id/profile_lblCurrentPoints"
         app:layout_constraintTop_toTopOf="@+id/profile_lblCurrentPoints"
-        tools:text="600 pt" />
+        tools:text="600" />
+
+    <TextView
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/pt"
+        android:textDirection="ltr"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_txtCurrentPoints"
+        app:layout_constraintStart_toEndOf="@+id/profile_txtCurrentPoints"
+        app:layout_constraintTop_toTopOf="@+id/profile_txtCurrentPoints" />
 
     <TextView
         android:id="@+id/profile_lblTotalPoints"
@@ -117,9 +129,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textDirection="ltr"
         app:layout_constraintStart_toEndOf="@+id/profile_lblTotalPoints"
         app:layout_constraintTop_toTopOf="@+id/profile_lblTotalPoints"
-        tools:text="800 pt" />
+        tools:text="-799" />
+
+    <TextView
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/pt"
+        android:textDirection="ltr"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_txtTotalPoints"
+        app:layout_constraintStart_toEndOf="@+id/profile_txtTotalPoints"
+        app:layout_constraintTop_toTopOf="@+id/profile_txtTotalPoints" />
 
     <TextView
         android:id="@+id/profile_lblUsedPoints"
@@ -138,9 +162,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textDirection="ltr"
         app:layout_constraintStart_toEndOf="@+id/profile_lblUsedPoints"
         app:layout_constraintTop_toTopOf="@+id/profile_lblUsedPoints"
-        tools:text="200 pt" />
+        tools:text="200" />
 
+    <TextView
+        style="@style/TitleMedium.OnSurfaceVariant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/pt"
+        android:textDirection="ltr"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_txtUsedPoints"
+        app:layout_constraintStart_toEndOf="@+id/profile_txtUsedPoints"
+        app:layout_constraintTop_toTopOf="@+id/profile_txtUsedPoints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

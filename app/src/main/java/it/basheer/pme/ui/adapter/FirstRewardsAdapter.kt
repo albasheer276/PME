@@ -29,7 +29,7 @@ class FirstRewardsAdapter(private val mContext: Context) : RecyclerArrayAdapter<
         override fun setData(data: Reward) {
             binding.apply {
                 taskItemTxtTaskName.text = data.name
-                taskItemTxtTaskPoints.text = "${data.points} ${context.resources.getString(R.string.pt)}"
+                taskItemTxtTaskPoints.text = "${data.points} ${mContext.resources.getString(R.string.pt)}"
             }
         }
 

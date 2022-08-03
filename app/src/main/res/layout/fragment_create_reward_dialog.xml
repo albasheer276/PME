@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/RewardDialog"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingHorizontal="32dp"
     android:paddingVertical="16dp"
     tools:context=".ui.dialog.CreateRewardDialogFragment">

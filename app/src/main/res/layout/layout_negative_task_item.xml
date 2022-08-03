@@ -22,6 +22,7 @@
             style="@style/LabelLarge.OnSecondaryContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
             app:layout_constraintEnd_toStartOf="@+id/taskItem_txtTaskPoints"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -42,8 +43,8 @@
             style="@style/LabelMedium.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
             android:layout_marginTop="8dp"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/taskItem_txtTaskName"
             tools:text="1 time" />

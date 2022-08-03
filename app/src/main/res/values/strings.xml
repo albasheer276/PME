@@ -5,7 +5,6 @@
     <string name="pin_code">PIN Code</string>
     <string name="create_account">Create Account</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pme">PME</string>
     <string name="subTitle">Hi there\nit’s the time to manage your life</string>
     <string name="enter_your_name">Enter Your Name</string>
@@ -77,4 +76,16 @@
     <string name="wrong_current_pin">Wrong Current PIN!</string>
     <string name="pin_changed_success">PIN changed successfully</string>
     <string name="change_pin">Change PIN</string>
+    <string name="create_member_profile">Create Member Profile</string>
+    <string name="enter_member_name">Enter Member Name</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="make_default">Make Default</string>
+    <string name="warning_write_member_name">Enter member name, please!</string>
+    <string name="default_user_chnaged">Default User has been changed</string>
+    <string name="today_at">Today at</string>
+    <string name="yesterday_at">Yesterday at</string>
+    <string name="at">at</string>
+    <string name="delete">Delete</string>
+    <string name="default_user">Default</string>
+    <string name="Mine">Mine</string>
 </resources>

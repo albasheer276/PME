@@ -14,6 +14,7 @@ import it.basheer.pme.R
 import it.basheer.pme.base.BaseApp
 import it.basheer.pme.data.model.Reward
 import it.basheer.pme.databinding.FragmentCreateRewardDialogBinding
+import it.basheer.pme.util.hideKeyboard
 
 class CreateRewardDialogFragment(private val onClickListener: (reward: Reward) -> Unit) : DialogFragment() {
 
@@ -61,6 +62,7 @@ class CreateRewardDialogFragment(private val onClickListener: (reward: Reward) -
         setOnTextChangeListener()
 
         mBinding.createRewardBtnCancel.setOnClickListener {
+            hideKeyboard()
             this.dismiss()
         }
 
@@ -90,6 +92,7 @@ class CreateRewardDialogFragment(private val onClickListener: (reward: Reward) -
                 )
                 onClickListener(reward)
                 this.dismiss()
+                hideKeyboard()
             }
         }
     }

@@ -3,4 +3,93 @@
     <string name="app_name">PME</string>
     <string name="create_personal_account">انشاء الحساب الشخصي</string>
     <string name="pme">PME</string>
+    <string name="your_name">اسمك</string>
+    <string name="pin_code">رمز الدخول</string>
+    <string name="create_account">انشاء حساب</string>
+    <string name="enter_your_name">اكتب اسمك</string>
+    <string name="create_profile">انشاء الملف الشخصي</string>
+    <string name="warning_write_your_name">من فضلك، اكتب اسمك!</string>
+    <string name="pin_used_the_app">سيتم طلب رمز الدخول في كل استخدام للتطبيق</string>
+    <string name="set_pin">اكتب رمز الدخول</string>
+    <string name="skip_for_now">نخطي</string>
+    <string name="pin_4_digits">لابد ان يكون رمز الدخول 4 ارقام</string>
+    <string name="add_task">اضافة مهمة</string>
+    <string name="loading_data">جارٍ تحميل البيانات</string>
+    <string name="empty_data">لاتوجد بيانات</string>
+    <string name="let_s_create_the_tasks_you_want_to_commit_to">دعنا نقم بإنشاء المهام التي تريد الالتزام بها</string>
+    <string name="the_tasks_you_want_to_commit_to">المهام التي تريد الالتزام بها</string>
+    <string name="create_new_task">انشاء مهمة جديدة</string>
+    <string name="task_name">اسم المهمة</string>
+    <string name="task_period">فترة المهمة</string>
+    <string name="task_count">عدد المرات</string>
+    <string name="task_duration_min">مدة المهمة (بالدقائق)</string>
+    <string name="task_points">نقاط المهمة</string>
+    <string name="create">انشاء</string>
+    <string name="cancel">الغاء</string>
+    <string name="required_field">الحقل مطلوب</string>
+    <string name="create_task_success">تم انشاء المهمة بنجاح</string>
+    <string name="dash">-</string>
+    <string name="times">مرات</string>
+    <string name="min">دقائق</string>
+    <string name="pt">نقطة</string>
+    <string name="next">التالي</string>
+    <string name="the_tasks_you_want_to_avoid">المهام التي تريد تجنبها</string>
+    <string name="let_s_create_the_tasks_you_want_to_avoid">دعنا نقم بانشاء المهام التي تريد تجنبها</string>
+    <string name="once">مرة</string>
+    <string name="rewards_list">قائمة المكافآت</string>
+    <string name="now_let_s_specify_the_rewards_for_you">والآن لنقم بتحديد قائمة المكافآت لك</string>
+    <string name="create_new_reward">انشاء مكافأة جديدة</string>
+    <string name="reward_name">اسم المكافأة</string>
+    <string name="open_navigation_drawer">افتح درج التنقل</string>
+    <string name="menu_home">الرئيسية</string>
+    <string name="menu_rewards">المكافآت</string>
+    <string name="menu_profile">الملف الشخصي</string>
+    <string name="menu_members">الاعضاء</string>
+    <string name="menu_pin">رمز الدخول</string>
+    <string name="current_points">النقاط الحالية :</string>
+    <string name="forgot_pin_code">نسيت رمز الدخول؟</string>
+    <string name="good_tasks">المهام الجيدة</string>
+    <string name="bad_tasks">المهام السيئة</string>
+    <string name="let_s_convert_them_to_blue">لنقم بتحويلها الى اللون الازرق 💪</string>
+    <string name="slash">/</string>
+    <string name="done">مكتملة</string>
+    <string name="keep_yourself_away_from_these_keep_it_white">أبقِ نفسك بعيدا عنها، اتركها بيضاء اللون 💪</string>
+    <string name="todo">للقيام بها</string>
+    <string name="in_progress">قيد التنفيذ</string>
+    <string name="free">طليق</string>
+    <string name="down">خاسر</string>
+    <string name="current_progress">التقدم الحالي</string>
+    <string name="add_new_progress">اضافة تقدم جديد</string>
+    <string name="today_progress">التقدم اليومي</string>
+    <string name="buy_a_reward_using_your_points">اشترِ مكافأة باتسخدام نقاطك</string>
+    <string name="last_reward_history">قائمة آخر المكافآت</string>
+    <string name="buy">إشترِ</string>
+    <string name="not_enough_points">لا توجد نقاط كافية</string>
+    <string name="change_name">تغيير الاسم</string>
+    <string name="total_points">النقاط الاجمالية :</string>
+    <string name="used_points">النقاط المستخدمة :</string>
+    <string name="name_chnaged_success">تم تغيير الاسم بنجاح</string>
+    <string name="enter_current_pin">ادخل رمز الدخول الحالي</string>
+    <string name="enter_new_pin">ادخل رمز الدخول الجديد</string>
+    <string name="wrong_pin">رمز خاطئ!</string>
+    <string name="wrong_current_pin">رمز الدخول الجديد خاطئ!</string>
+    <string name="pin_changed_success">تم تغيير رمز الدخول بنجاح</string>
+    <string name="change_pin">تغيير رمز الدخول</string>
+    <string name="create_member_profile">انشاء حساب لعضو</string>
+    <string name="enter_member_name">ادخل اسم العضو</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="make_default">افتراضي</string>
+    <string name="warning_write_member_name">من فضلك، ادخل اسم العضو!</string>
+    <string name="default_user_chnaged">تم تغيير المستخدم الافتراضي</string>
+    <string name="today_at">اليوم في</string>
+    <string name="yesterday_at">البارحة في</string>
+    <string name="at">في</string>
+    <string name="delete">حذف</string>
+    <string name="default_user">افتراضي</string>
+    <string name="Mine">حسابي</string>
+    <string name="subTitle">اهلا بك
+    \n
+        انه الوقت لتنظيم حياتك
+    </string>
+
 </resources>

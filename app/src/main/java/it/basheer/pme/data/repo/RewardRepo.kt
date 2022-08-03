@@ -24,4 +24,8 @@ class RewardRepo @Inject constructor(appDatabase: AppDatabase) {
         return rewardRepo.createRewardLog(rewardLog)
     }
 
+    suspend fun getLastProgress(id: Long): List<RewardLog> {
+        return rewardRepo.getLastProgress(id)
+    }
+
 }

@@ -25,4 +25,7 @@ interface RewardDao {
 
     @Insert
     suspend fun createRewardLog(rewardLog: RewardLog)
+
+    @Query("Select * from rewards_log where reward_id = :id order by DATETIME(date) desc limit 5")
+    suspend fun getLastProgress(id: Long): List<RewardLog>
 }

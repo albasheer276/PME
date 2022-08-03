@@ -12,15 +12,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
 import it.basheer.pme.base.BaseApp
 import it.basheer.pme.data.model.RewardLog
-import it.basheer.pme.data.model.TaskLog
 import it.basheer.pme.databinding.FragmentRewardsBinding
-import it.basheer.pme.ui.adapter.FirstRewardsAdapter
 import it.basheer.pme.ui.adapter.RewardsAdapter
 import it.basheer.pme.ui.dialog.CreateRewardDialogFragment
-import it.basheer.pme.ui.dialog.PositiveTaskDialogFragment
 import it.basheer.pme.ui.dialog.RewardDialogFragment
 import it.basheer.pme.ui.view_models.RewardViewModel
 import it.basheer.pme.ui.view_models.UserViewModel
+import it.basheer.pme.util.getDates
 import it.basheer.pme.util.hideKeyboard
 import java.text.SimpleDateFormat
 import java.util.*
@@ -62,27 +60,31 @@ class RewardsFragment : Fragment() {
         mBinding.rewardsRvRewards.apply {
             setLayoutManager(LinearLayoutManager(context))
             mRewardsAdapter = RewardsAdapter(requireContext()) { reward ->
-                RewardDialogFragment.newInstance(reward) {
-                    val date = Date()
-                    val currentDate = SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(date)
-                    val rewardLog = RewardLog(
-                        user_id = BaseApp.getInstance().getUser().value?.id!!,
-                        reward_id = reward.id!!,
-                        points = reward.points,
-                        date = currentDate
-                    )
-                    rewardViewModel.createRewardLog(rewardLog).observe(viewLifecycleOwner) {
-
-                        BaseApp.getInstance().getUser().value?.let { mainUser ->
-                            mainUser.points = mainUser.points.minus(reward.points)
-                            BaseApp.getInstance().setUser(mainUser)
-                            userViewModel.updateUser(mainUser).observe(viewLifecycleOwner) {
-                                loadData()
+                rewardViewModel.getLastProgress(reward.id!!).observe(viewLifecycleOwner) { rewardLogs ->
+                    RewardDialogFragment.newInstance(reward, rewardLogs) {
+                        if (BaseApp.getInstance().getUser().value?.points!! >= reward.points) {
+                            val rewardLog = RewardLog(
+                                user_id = BaseApp.getInstance().getUser().value?.id!!,
+                                reward_id = reward.id!!,
+                                points = reward.points,
+                                date = getDates()[3]
+                            )
+                            rewardViewModel.createRewardLog(rewardLog).observe(viewLifecycleOwner) {
+                                BaseApp.getInstance().getUser().value?.let { mainUser ->
+                                    mainUser.points = mainUser.points.minus(reward.points)
+                                    BaseApp.getInstance().setUser(mainUser)
+                                    userViewModel.updateUser(mainUser).observe(viewLifecycleOwner) {
+                                        loadData()
+                                    }
+                                }
                             }
+                        } else {
+                            Toast.makeText(context, getString(R.string.not_enough_points), Toast.LENGTH_SHORT).show()
                         }
-                    }
 
-                }.show(parentFragmentManager, RewardDialogFragment.TAG)
+                    }.show(parentFragmentManager, RewardDialogFragment.TAG)
+                }
+
             }
             adapter = mRewardsAdapter
 
