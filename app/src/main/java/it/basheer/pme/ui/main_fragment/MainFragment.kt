@@ -1,6 +1,7 @@
 package it.basheer.pme.ui.main_fragment
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,6 +39,12 @@ class MainFragment : Fragment() {
                 requireActivity().finish()
             }
         })
+
+        val animation = TransitionInflater.from(requireContext()).inflateTransition(
+            android.R.transition.move
+        )
+
+        sharedElementEnterTransition = animation
     }
 
     override fun onCreateView(

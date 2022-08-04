@@ -8,47 +8,75 @@
         android:id="@+id/splashFragment"
         android:name="it.basheer.pme.ui.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_createProfileFragment"
             app:destination="@id/createProfileFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             app:launchSingleTop="true"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment_to_checkPinFragment"
-            app:destination="@id/checkPinFragment" />
+            app:destination="@id/checkPinFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/createProfileFragment"
         android:name="it.basheer.pme.ui.first_use.CreateProfileFragment"
         android:label="fragment_create_profile"
-        tools:layout="@layout/fragment_create_profile" >
+        tools:layout="@layout/fragment_create_profile">
         <action
             android:id="@+id/action_createProfileFragment_to_createPinFragment"
             app:destination="@id/createPinFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
             app:launchSingleTop="true"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/createPinFragment"
         android:name="it.basheer.pme.ui.first_use.CreatePinFragment"
         android:label="fragment_create_pin"
-        tools:layout="@layout/fragment_create_pin" >
+        tools:layout="@layout/fragment_create_pin">
         <action
             android:id="@+id/action_createPinFragment_to_positiveTasksFragment"
-            app:destination="@id/positiveTasksFragment" />
+            app:destination="@id/positiveTasksFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/positiveTasksFragment"
         android:name="it.basheer.pme.ui.first_use.FirstPositiveTasksFragment"
         android:label="fragment_positive_tasks"
-        tools:layout="@layout/fragment_first_positive_tasks" >
+        tools:layout="@layout/fragment_first_positive_tasks">
         <action
             android:id="@+id/action_positiveTasksFragment_to_negativeTasksFragment"
-            app:destination="@id/negativeTasksFragment" />
+            app:destination="@id/negativeTasksFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -59,27 +87,39 @@
         android:id="@+id/negativeTasksFragment"
         android:name="it.basheer.pme.ui.first_use.FirstNegativeTasksFragment"
         android:label="fragment_negative_tasks"
-        tools:layout="@layout/fragment_first_negative_tasks" >
+        tools:layout="@layout/fragment_first_negative_tasks">
         <action
             android:id="@+id/action_negativeTasksFragment_to_rewardsFragment"
-            app:destination="@id/rewardsFragment" />
+            app:destination="@id/rewardsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/rewardsFragment"
         android:name="it.basheer.pme.ui.first_use.FirstRewardsFragment"
         android:label="fragment_rewards"
-        tools:layout="@layout/fragment_first_rewards" >
+        tools:layout="@layout/fragment_first_rewards">
         <action
             android:id="@+id/action_rewardsFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/checkPinFragment"
         android:name="it.basheer.pme.ui.pin.CheckPinFragment"
         android:label="fragment_check_pin"
-        tools:layout="@layout/fragment_check_pin" >
+        tools:layout="@layout/fragment_check_pin">
         <action
             android:id="@+id/action_checkPinFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/mainFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
 </navigation>

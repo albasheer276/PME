@@ -7,7 +7,7 @@ import it.basheer.pme.data.dao.TaskDao
 import it.basheer.pme.data.dao.UserDao
 import it.basheer.pme.data.model.*
 
-@Database(entities = [User::class, Task::class, Reward::class, TaskLog::class, RewardLog::class], version = 13, exportSchema = false)
+@Database(entities = [User::class, Task::class, Reward::class, TaskLog::class, RewardLog::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract val userDao: UserDao
     abstract val taskDao: TaskDao

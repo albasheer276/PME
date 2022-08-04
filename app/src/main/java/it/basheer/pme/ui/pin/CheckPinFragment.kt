@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import it.basheer.pme.R
@@ -46,7 +47,11 @@ class CheckPinFragment : Fragment() {
                 if (pin == text.toString().toInt()) {
                     Handler(Looper.getMainLooper()).postDelayed({
                         mBinding.checkPinTxtError.visibility = View.INVISIBLE
-                        findNavController().navigate(R.id.action_checkPinFragment_to_mainFragment)
+
+                        val extras = FragmentNavigatorExtras(
+                            mBinding.checkPinImgIcon to "fragmentMain_imgMain",
+                        )
+                        findNavController().navigate(R.id.action_checkPinFragment_to_mainFragment, null, null, extras)
                     }, 500)
                 } else {
                     mBinding.checkPinTxtError.visibility = View.VISIBLE

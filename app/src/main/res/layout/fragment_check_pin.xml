@@ -20,6 +20,7 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/app_name"
         android:orientation="vertical"
+        android:transitionName="checkPin_imgIcon"
         android:src="@drawable/ic_main_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
